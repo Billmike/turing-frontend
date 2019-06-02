@@ -83,7 +83,7 @@ class NavbarComponent extends Component {
             </Nav>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/cart" style={{ display: 'flex' }}>
+                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: 'black',
                     fontSize: 20,
@@ -193,7 +193,7 @@ class NavbarComponent extends Component {
                 />
               </NavItem>}
               <NavItem>
-                <NavLink href="/cart" style={{ display: 'flex' }}>
+                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: '#FFF',
                     fontSize: 20,
