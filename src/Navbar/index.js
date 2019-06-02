@@ -58,11 +58,11 @@ class NavbarComponent extends Component {
                 !accessToken &&
                 <>
                 <NavItem style={{ display: 'flex', flexDirection: 'row' }}>
-                <NavLink href="/login" style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Sign in</NavLink>
+                <NavLink onClick={() => history.push('/login')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Sign in</NavLink>
               </NavItem>
               <NavItem style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ marginTop: 8, fontFamily: 'Montserrat' }}>Or</p>
-                <NavLink href="/signup" style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Register</NavLink>
+                <NavLink onClick={() => history.push('/signup')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Register</NavLink>
               </NavItem>
               </>
               }
@@ -71,7 +71,7 @@ class NavbarComponent extends Component {
                   {customer.name}
                 </DropdownToggle>
                 <DropdownMenu left>
-                  <DropdownItem href="/profile" style={{ color: '#f7436b', fontFamily: 'Montserrat' }}>
+                  <DropdownItem onClick={() => history.push('/profile')} style={{ color: '#f7436b', fontFamily: 'Montserrat' }}>
                     MY PROFILE
                   </DropdownItem>
                   <DropdownItem divider />
@@ -106,10 +106,10 @@ class NavbarComponent extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{ fontFamily: 'Montserrat' }} href="/cart">Your Bag: </NavLink>
+                <NavLink style={{ fontFamily: 'Montserrat' }} onClick={() => history.push('/cart')}>Your Bag: </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{ fontFamily: 'Montserrat' }} href="/cart">$ {cartPrice ? cartPrice : '0.00'} </NavLink>
+                <NavLink style={{ fontFamily: 'Montserrat' }} onClick={() => history.push('/cart')}>$ {cartPrice ? cartPrice : '0.00'} </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
