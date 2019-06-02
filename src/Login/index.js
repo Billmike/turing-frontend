@@ -98,7 +98,7 @@ class Login extends Component {
     } else {
       fbContent = (
         <FacebookLogin
-          appId="352854622106208"
+          appId="466642734096700"
           fields="name,email,picture"
           onClick={() => this.componentClicked()}
           callback={(response) => this.responseFacebook(response)}
