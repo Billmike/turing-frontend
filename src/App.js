@@ -9,6 +9,7 @@ import Profile from './UserProfile';
 import Checkout from './Checkout';
 import RequireAuth from './utils/RequireAuth';
 import OrderConfirmation from './OrderConfirmation';
+import NotFoundPage from './NotFoundPage';
 import { toast } from 'react-toastify';
 import { ToastProvider } from 'react-toast-notifications';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,9 +20,9 @@ toast.configure();
 function App() {
   return (
     <HashRouter>
-      <BrowserRouter>
-        <Switch>
-          <ToastProvider>
+      <ToastProvider>
+        <BrowserRouter>
+          <Switch>
             <Route exact path="/" component={Homepage} />
             <Route path="/product/:id" component={SingleProduct} />
             <Route path="/signup" component={Signup} />
@@ -30,9 +31,10 @@ function App() {
             <Route path="/profile" component={RequireAuth(Profile)} />
             <Route path="/checkout" component={RequireAuth(Checkout)} />
             <Route path="/confirm" component={RequireAuth(OrderConfirmation)} />
-          </ToastProvider>
-        </Switch>
-      </BrowserRouter>
+            <Route component={NotFoundPage} />
+          </Switch>
+        </BrowserRouter>
+      </ToastProvider>
     </HashRouter>
   );
 }

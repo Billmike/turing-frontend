@@ -58,11 +58,11 @@ class NavbarComponent extends Component {
                 !accessToken &&
                 <>
                 <NavItem style={{ display: 'flex', flexDirection: 'row' }}>
-                <NavLink onClick={() => history.push('/login')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Sign in</NavLink>
+                <NavLink onClick={() => history.push('/login')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold', cursor: 'pointer' }}>Sign in</NavLink>
               </NavItem>
               <NavItem style={{ display: 'flex', flexDirection: 'row' }}>
                 <p style={{ marginTop: 8, fontFamily: 'Montserrat' }}>Or</p>
-                <NavLink onClick={() => history.push('/signup')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold' }}>Register</NavLink>
+                <NavLink onClick={() => history.push('/signup')} style={{ color: '#f7436b', fontFamily: 'Montserrat', fontWeight: 'bold', cursor: 'pointer' }}>Register</NavLink>
               </NavItem>
               </>
               }
@@ -83,7 +83,7 @@ class NavbarComponent extends Component {
             </Nav>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex' }}>
+                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex', cursor: 'pointer' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: 'black',
                     fontSize: 20,

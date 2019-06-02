@@ -12,12 +12,19 @@ class Cart extends Component {
     productIncart: [],
     total_price: '',
     cartID: '',
-    isLoading: false
+    isLoading: false,
+    isLoggedIn: false
   }
 
   async componentDidMount() {
     this.setState({ isLoading: true })
     const getCartID = await localStorage.getItem('cartId');
+    const userID = await localStorage.getItem('user');
+    if (!userID) {
+      this.setState({ isLoggedIn: false })
+    } else {
+      this.setState({ isLoggedIn: true })
+    }
     if (!getCartID) {
       this.setState({ productIncart: [], isLoading: false })
     } else {
@@ -91,7 +98,7 @@ class Cart extends Component {
   }
 
   render() {
-    const { productIncart, total_price, isLoading } = this.state;
+    const { productIncart, total_price, isLoading, isLoggedIn } = this.state;
     const { history } = this.props;
     if (isLoading) {
       return <Spinner />
@@ -204,12 +211,16 @@ class Cart extends Component {
           >
             Back to shop
           </button>
-          <button className={Number(total_price) > 50 ? "cart-checkout-button" : "cart-checkout-button-disabled"}
-          disabled={Number(total_price) < 50}
-            onClick={() => history.push('/checkout')}
-          >
-            {Number(total_price) < 50 ? 'Order price needs to be greater than $50' : 'Checkout'}
-          </button>
+          {isLoggedIn ?
+          (
+            <button
+              className={Number(total_price) > 50 ? "cart-checkout-button" : "cart-checkout-button-disabled"}
+              disabled={Number(total_price) < 50}
+              onClick={() => history.push('/checkout')}
+            >
+              {Number(total_price) < 50 ? 'Order price needs to be greater than $50' : 'Checkout'}
+            </button>
+          ) : <p onClick={() => history.push('/login')} className="login-to-checkout">Log in to proceed to checkout</p>}
         </div>}
       </div>
     )

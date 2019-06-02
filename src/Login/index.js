@@ -60,7 +60,7 @@ class Login extends Component {
       localStorage.setItem('user', stringifyResponse);
       this.setState({ disabledButton: false })
       history.push('/');
-      toastManager.add('Signup successful!', { appearance: 'success' });
+      toastManager.add('Login successful!', { appearance: 'success' });
     } catch (error) {
       toastManager.add('Login error', { appearance: 'error' })
     }

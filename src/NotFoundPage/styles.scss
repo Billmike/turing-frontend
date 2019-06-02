@@ -1,0 +1,23 @@
+.not-found-container {
+  background: url('../assets/not-found.jpg');
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pnf {
+  position: absolute;
+  font-size: 45px;
+  color: #FFF;
+  left: 5%;
+  top: 50%
+}
+
+.back-to-page {
+  position: absolute;
+  top: 70%;
+  width: 120px;
+  height: 40px;
+  left: 5%;
+  border-radius: 30px;
+}
