@@ -1,15 +1,42 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 import axios from 'axios';
+import { Emojione } from 'react-emoji-render';
 import Cards from '../Cards';
 import Navbar from '../Navbar';
 import Spinner from '../Spinner';
+import {
+  getCartItems,
+  getCartPrice,
+  fetchProducts,
+  searchProducts
+} from '../utils/apiCalls';
 import Categories from '../Categories';
+import Filters from '../Filters';
 import Paginate from 'react-paginate';
-import image1 from '../assets/img1.jpg';
-import image2 from '../assets/img2.jpg';
-import image3 from '../assets/img3.jpg';
+import image1 from '../assets/bags.jpg';
+import image2 from '../assets/lines.jpg';
+import image3 from '../assets/dooley.jpg';
 import './style.css';
+
+const ITEMS = [
+  {
+    src: image1,
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    src: image2,
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  },
+  {
+    src: image3,
+    altText: 'Slide 1',
+    caption: 'Slide 1'
+  }
+]
 
 class HomePage extends React.Component {
   state = {
@@ -25,7 +52,8 @@ class HomePage extends React.Component {
     category: 0,
     department: '',
     department_id: '',
-    category_id: ''
+    category_id: '',
+    activeIndex: 0
   }
 
   async componentDidMount() {
@@ -35,15 +63,15 @@ class HomePage extends React.Component {
     if (!getCartID) {
       this.setState({ productIncart: [] })
     } else {
-      const cartItem = await axios.get(`https://backendapi.turing.com/shoppingcart/${getCartID}`);
-      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`)
+      const cartItem = await getCartItems(getCartID);
+      const totalPrice = await getCartPrice(getCartID);
       this.setState({ productIncart: cartItem.data, total_price: totalPrice.data.total_amount });
     }
     this.fetchProducts(page);
   }
 
   fetchProducts = async (page) => {
-    const response = await axios.get(`https://backendapi.turing.com/products?page=${page}&limit=${12}`);
+    const response = await fetchProducts(page);
     this.setState({ products: response.data.rows, isLoading: false, pageCount: Math.ceil(response.data.count / 12) })
   }
 
@@ -67,23 +95,29 @@ class HomePage extends React.Component {
     this.setState({ searchTerm, hasSearched: true, })
     if (searchTerm.length === 0) {
       this.setState({ isLoading: true })
-      const response = await axios.get(`https://backendapi.turing.com/products?page=${page}&limit=${12}`);
-      this.setState({ searchedProducts: response.data.rows, isLoading: false, pageCount: Math.ceil(response.data.count / 12) })
+      const response = await fetchProducts(page);
+      this.setState({ products: response.data.rows, isLoading: false, pageCount: Math.ceil(response.data.count / 12), hasSearched: false, searchedProducts: [] })
     } else if (searchTerm.length > 3) {
       this.setState({ isLoading: true })
-      const foundProducts = await axios.get(`https://backendapi.turing.com/products/search?query_string=${searchTerm}`);
-      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: 1 })
+      const foundProducts = await searchProducts(searchTerm);
+      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1 })
     }
   }
 
-  setCategory = async (value, category_id) => {
-    this.setState({ category: value, page: 1, category_id, department: '' }, () => {
+  setCategory = async (category_id) => {
+    this.setState({ page: 1, category_id, department: '' }, () => {
       this.fetchCategories(category_id, this.state.page)
     })
   }
 
   setDepartment = async (value, department_id) => {
     this.setState({ department: value, page: 1, department_id, category: '' }, () => {
+      this.fetchDepartments(department_id, this.state.page)
+    });
+  }
+
+  setDepartmentFilter = (department_id) => {
+    this.setState({ page: 1, department_id, category: '' }, () => {
       this.fetchDepartments(department_id, this.state.page)
     });
   }
@@ -96,6 +130,31 @@ class HomePage extends React.Component {
   fetchDepartments = async(department_id, page) => {
     const response = await axios.get(`https://backendapi.turing.com/products/inDepartment/${department_id}?page=${page}&limit=${12}`);
     this.setState({ products: response.data.rows, pageCount: Math.ceil(response.data.count / 12) })
+  }
+
+  onExiting = () => {
+    this.animating = true;
+  }
+
+  onExited = () => {
+    this.animating = false;
+  }
+
+  next = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === ITEMS.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous = () => {
+    if (this.animating) return;
+    const previousIndex = this.state.activeIndex === 0 ? ITEMS.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: previousIndex });
+  }
+
+  goToIndex = (newIndex) => {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
   }
 
   render() {
@@ -116,8 +175,20 @@ class HomePage extends React.Component {
       searchTerm,
       searchedProducts,
       hasSearched,
-      department
+      department,
+      activeIndex
     } = this.state;
+
+    const slides = ITEMS.map(item => (
+      <CarouselItem
+        onExiting={this.onExiting}
+        onExited={this.onExited}
+        key={item.src}
+      >
+        <img src={item.src} alt={item.altText} className="carousel-style-class" />
+
+      </CarouselItem>
+    ))
 
     return (
       <div>
@@ -130,30 +201,37 @@ class HomePage extends React.Component {
           department={department}
           setDepartment={this.setDepartment}
           />
-        <Slider {...settings}>
-          <div>
-            <img src={image1} alt="" style={{ width: '100%', height: 600 }} />
-          </div>
-          <div>
-            <img src={image2} alt="" style={{ width: '100%', height: 600 }} />
-          </div>
-          <div>
-            <img src={image3} alt="" style={{ width: '100%', height: 600 }} />
-          </div>
-        </Slider>
+        <Carousel
+          activeIndex={activeIndex}
+          next={this.next}
+          previous={this.previous}
+        >
+          <CarouselIndicators activeIndex={activeIndex} items={ITEMS} onClickHandler={this.goToIndex} />
+          {slides}
+          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        </Carousel>
         { isLoading && <Spinner /> }
-        {!isLoading && <Categories category={this.state.category} setCategory={this.setCategory} />}
-        {!isLoading && <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: 350 }}>
+        {/* {!isLoading && <Categories category={this.state.category} setCategory={this.setCategory} />} */}
+        {!isLoading && <Filters hasSearched={hasSearched} searchedProducts={searchedProducts} filterCategory={this.setCategory} setDepartmentFilter={this.setDepartmentFilter} />}
+        {!isLoading && <div className="products-card-wrap" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {/* <Filters hasSearched={hasSearched} searchedProducts={searchedProducts} filterCategory={this.setCategory} setDepartmentFilter={this.setDepartmentFilter} /> */}
           {
             hasSearched && searchedProducts.length > 0 ?
-            searchedProducts.map((product) => (
+            searchedProducts.map((product, index) => (
               <Cards
-                key={product.product_id}
+                key={index + 100}
                 {...product}
                 history={history}
               />
             )):
-            products.map((product) => (
+            hasSearched && searchedProducts.length === 0 ? (
+              <div className="no-product-found">
+                <p>No products found</p>
+                <Emojione size={55} text=":disappointed_relieved:" />
+              </div>
+              )
+            : products.map((product) => (
               <Cards key={product.product_id} {...product} history={history} />
             ))
           }
@@ -162,7 +240,7 @@ class HomePage extends React.Component {
           onPageChange={this.handlePageClick}
           previousLabel="<"
           nextLabel=">"
-          breakLabel={<a href="">...</a>}
+          breakLabel={"..."}
           pageCount={this.state.pageCount}
           containerClassName="pagination-class justify-content-center"
           pageClassName="page-item page-numbers-style"

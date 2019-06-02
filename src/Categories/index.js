@@ -2,13 +2,24 @@ import React from 'react'
 
 const Category = ({ setCategory, category }) => {
   return (
-    <div style={{ position: 'absolute', marginLeft: 10 }}>
+    <div style={{
+      position: 'absolute',
+      marginLeft: 10,
+      boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
+      backgroundColor: '#FAFAFA',
+      paddingLeft: 30,
+      paddingRight: 30,
+      paddingTop: 20,
+      marginTop: 30,
+      borderRadius: 5,
+      paddingBottom: 10
+    }}>
       <h4>Categories</h4>
       <p
         onClick={() => setCategory('french', '1')}
         style={{
           backgroundColor: category === 'french' ? 'red' : '',
-          textAlign: category === 'french' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'french' ? 5 : '',
           paddingBottom: category === 'french' ? 5 : '',
           borderRadius: category === 'french' ? 5 : '',
@@ -20,7 +31,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('italian', '2')}
         style={{
           backgroundColor: category === 'italian' ? 'red' : '',
-          textAlign: category === 'italian' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'italian' ? 5 : '',
           paddingBottom: category === 'italian' ? 5 : '',
           borderRadius: category === 'italian' ? 5 : '',
@@ -32,7 +43,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('irish', '3')}
         style={{
           backgroundColor: category === 'irish' ? 'red' : '',
-          textAlign: category === 'irish' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'irish' ? 5 : '',
           paddingBottom: category === 'irish' ? 5 : '',
           borderRadius: category === 'irish' ? 5 : '',
@@ -44,7 +55,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('animal', '4')}
         style={{
           backgroundColor: category === 'animal' ? 'red' : '',
-          textAlign: category === 'animal' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'animal' ? 5 : '',
           paddingBottom: category === 'animal' ? 5 : '',
           borderRadius: category === 'animal' ? 5 : '',
@@ -56,7 +67,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('flower', '5')}
         style={{
           backgroundColor: category === 'flower' ? 'red' : '',
-          textAlign: category === 'flower' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'flower' ? 5 : '',
           paddingBottom: category === 'flower' ? 5 : '',
           borderRadius: category === 'flower' ? 5 : '',
@@ -68,7 +79,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('christmas', '6')}
         style={{
           backgroundColor: category === 'christmas' ? 'red' : '',
-          textAlign: category === 'christmas' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'christmas' ? 5 : '',
           paddingBottom: category === 'christmas' ? 5 : '',
           borderRadius: category === 'christmas' ? 5 : '',
@@ -80,7 +91,7 @@ const Category = ({ setCategory, category }) => {
         onClick={() => setCategory('val', '7')}
         style={{
           backgroundColor: category === 'val' ? 'red' : '',
-          textAlign: category === 'val' ? 'center' : '',
+          textAlign: 'center',
           paddingTop: category === 'val' ? 5 : '',
           paddingBottom: category === 'val' ? 5 : '',
           borderRadius: category === 'val' ? 5 : '',

@@ -1,0 +1,129 @@
+@import '../../public/colors.scss';
+
+.tag-button {
+  background-color: $grey;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.cart-checkout-button {
+  border-radius: 20px;
+  color: #FFF;
+  background-color: #f7436b;
+  border-color: #f7436b;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+}
+
+.cart-checkout-button-disabled {
+  border-radius: 20px;
+  color: #FFF;
+  background-color: darkgray;
+  border-color: darkgray;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+  max-height: 100px;
+  max-width: 300px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: not-allowed;
+  font-family: 'Montserrat';
+}
+
+.item {
+  margin-top: -1px;
+}
+
+.product-count {
+  border-radius: 20px;
+  border: 1px solid $grey;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.product-section {
+  display: 'flex';
+  flex-basis: 25%;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.back-to-shop {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FFF;
+  color: black;
+  border-color: #FFF;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+  font-family: 'Montserrat';
+}
+
+.product-in-cart-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  & p {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+  }
+
+  & button {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    color: #f7436b;
+    border-color: #FFF;
+    box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
+    margin-top: 15px;
+    font-family: 'Montserrat';
+  }
+}
+
+.decrement {
+  width: 20px;
+  height: 20px;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+
+  & p {
+    margin-top: -3px;
+  }
+}
+
+.increment {
+  width: 20px;
+  height: 20px;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat';
+
+  & p {
+    margin-top: -2px;
+  }
+}
+
+.header-styles {
+  font-family: 'Montserrat';
+}

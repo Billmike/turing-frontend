@@ -1,36 +1,68 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Input, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
+import StarRatings from 'react-star-ratings';
+import { withToastManager } from 'react-toast-notifications';
+import moment from 'moment';
 import Spinner from '../Spinner';
 import Navbar from '../Navbar';
+import './styles.scss';
 
 class SingleProduct extends Component {
   state = {
     product: {},
     size: '',
-    quantity: 0,
+    quantity: 1,
     thumbnail: '',
     color: '',
     isLoading: false,
     cart_id: '',
     productIncart: [],
-    total_price: '0.00'
+    total_price: '0.00',
+    totalRating: 0,
+    reviews: [],
+    reviewRating: 4,
+    reviewString: '',
+    nickname: '',
+    isModalOpen: false,
+    disableButton: false,
+    isUserLoggedIn: false,
+    disableReviewButton: false,
+    itemsInCartName: []
   }
 
   async componentDidMount() {
     this.setState({ isLoading: true })
     const { match: { params: { id } } } = this.props;
     const response = await axios.get(`https://backendapi.turing.com/products/${id}`);
+    const getUser = await localStorage.getItem('user');
+    if (!getUser) {
+      this.setState({ isUserLoggedIn: false });
+    } else {
+      this.setState({ isUserLoggedIn: true });
+    }
+    try {
+      const ratings = await axios.get(`https://backendapi.turing.com/products/${id}/reviews`);
+      let initialValue = 0;
+      const totalRating = ratings.data.reduce((acc, currentVal) => {
+        return acc + currentVal.rating;
+      }, initialValue);
+      const averageRating = ratings.data.length === 0 ? 0 : totalRating / ratings.data.length;
+      const convertToInteger = Number(averageRating).toFixed(1);
+      this.setState({ totalRating: convertToInteger, reviews: ratings.data })
+    } catch (error) {
+      console.log('error', error)
+    }
     const getCartID = await localStorage.getItem('cartId');
     if (!getCartID) {
       const cartID = await axios.get('https://backendapi.turing.com/shoppingcart/generateUniqueId');
-      console.log('cart', cartID.data.cart_id)
       localStorage.setItem('cartId', cartID.data.cart_id);
       this.setState({ cart_id: cartID.data.cart_id })
     } else {
       const response = await axios.get(`https://backendapi.turing.com/shoppingcart/${getCartID}`);
-      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`)
-      console.log('response', totalPrice);
-      this.setState({ cart_id: getCartID, productIncart: response.data, total_price: totalPrice.data.total_amount })
+      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`);
+      const namesOfItemsInCart = response.data.map(item => item.name);
+      this.setState({ cart_id: getCartID, productIncart: response.data, total_price: totalPrice.data.total_amount, itemsInCartName: namesOfItemsInCart })
     }
     this.setState({ product: response.data, thumbnail: response.data.thumbnail, isLoading: false })
   }
@@ -41,7 +73,7 @@ class SingleProduct extends Component {
 
   setQuantity = (type) => {
     const { quantity } = this.state;
-    if (type === 'decrement' && quantity > 0) {
+    if (type === 'decrement' && quantity > 1) {
       this.setState(prevState => ({
         quantity: prevState.quantity - 1
       }))
@@ -61,27 +93,128 @@ class SingleProduct extends Component {
   }
 
   addToCart = async () => {
+    this.setState({ disableButton: true })
     const { cart_id, product, size, color, quantity } = this.state;
+    const { toastManager } = this.props;
     const data = { cart_id, product_id: product.product_id, attributes: `${size}, ${color}` };
-    const getCartID = await localStorage.getItem('cartId');
-    const shoppingCartItems = await axios.post('https://backendapi.turing.com/shoppingcart/add', data);
-    const lastItem = shoppingCartItems.data[shoppingCartItems.data.length - 1];
-    const updateData = { quantity };
-    const updateQuantity = await axios.put(`https://backendapi.turing.com/shoppingcart/update/${lastItem.item_id}`, updateData);
-    const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`)
-    this.setState({ productIncart: updateQuantity.data, total_price: totalPrice.data.total_amount })
+    try {
+      const getCartID = await localStorage.getItem('cartId');
+      const shoppingCartItems = await axios.post('https://backendapi.turing.com/shoppingcart/add', data);
+      const lastItem = shoppingCartItems.data[shoppingCartItems.data.length - 1];
+      const updateData = { quantity };
+      const updateQuantity = await axios.put(`https://backendapi.turing.com/shoppingcart/update/${lastItem.item_id}`, updateData);
+      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`);
+      const namesOfItemsInCart = updateQuantity.data.map(item => item.name);
+      this.setState({ productIncart: updateQuantity.data, total_price: totalPrice.data.total_amount, isModalOpen: true, disableButton: false, itemsInCartName: namesOfItemsInCart })
+    } catch (error) {
+      toastManager.add('An error occurred', { appearance: 'error' })
+    }
+  }
+
+  setRating = (newRating, name) => {
+    this.setState({ reviewRating: newRating })
+  }
+
+  setReview = (event) => {
+    const inputValue = event.target.value;
+    this.setState({ reviewString: inputValue });
+  }
+
+  setNickname = (event) => {
+    const inputValue = event.target.value;
+    this.setState({ nickname: inputValue })
+  }
+
+  submitReview = async() => {
+    this.setState({ disableReviewButton: true })
+    const { match: { params: { id } }, toastManager } = this.props;
+    const { reviewString, reviewRating, reviews } = this.state;
+    const user = await localStorage.getItem('user');
+    const parsedUser = JSON.parse(user);
+    const data = { product_id: id, review: reviewString, rating: Number(reviewRating) };
+    try {
+      const url = `https://backendapi.turing.com/products/${id}/reviews`;
+      const options = {
+        method: 'POST',
+        url,
+        data,
+        headers: {
+          'USER-KEY': `${parsedUser.accessToken}`,
+          'Content-type': 'application/json'
+        }
+      }
+      await axios(options);
+      const newReviewData = {
+        name: parsedUser.customer.name,
+        review: reviewString,
+        rating: Number(reviewRating),
+        created_on: new Date()
+      }
+      toastManager.add('Review added successfully', { appearance: 'success' })
+      const newReviewsInState = [newReviewData, ...reviews];
+      this.setState({ reviews: newReviewsInState, reviewString: '', nickname: '', disableReviewButton: false });
+    } catch (error) {
+      toastManager.add('Error while adding review', { appearance: 'error' })
+    }
+  }
+
+  toggleModalVisibility = (isModalOpen) => {
+    this.setState({ isModalOpen });
+  }
+
+  renderModal = () => {
+    const { isModalOpen } = this.state;
+    const { history } = this.props;
+    return (
+      <Modal isOpen={isModalOpen} toggle={() => this.toggleModalVisibility(false)}>
+        <ModalHeader>Checkout</ModalHeader>
+        <ModalBody>
+          Product added to your cart.
+        </ModalBody>
+        <ModalFooter>
+          <button
+            style={{
+              height: 40,
+              width: 250,
+              backgroundColor: '#f7436b',
+              borderRadius: 20,
+              color: '#FFF',
+              borderColor: '#f7436b',
+              boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
+              fontFamily: 'Montserrat'
+            }}
+            onClick={() => this.toggleModalVisibility(false)}
+          >
+            Continue Shopping
+          </button>
+          <button
+            style={{
+              height: 40,
+              width: 150,
+              backgroundColor: '#f7436b',
+              borderRadius: 20,
+              color: '#FFF',
+              borderColor: '#f7436b',
+              boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
+              fontFamily: 'Montserrat'
+            }}
+            onClick={() => history.push('/cart')}
+          >
+            Go to cart
+          </button>
+        </ModalFooter>
+      </Modal>
+    )
   }
 
   render() {
-    console.log('props', this.state)
     const {
       product: {
         description,
-        discounted_price,
         image,
         image_2,
-        name,
         price,
+        name
       },
       quantity,
       thumbnail,
@@ -89,7 +222,14 @@ class SingleProduct extends Component {
       size,
       isLoading,
       productIncart,
-      total_price
+      total_price,
+      totalRating,
+      reviews,
+      reviewRating,
+      disableButton,
+      isUserLoggedIn,
+      disableReviewButton,
+      itemsInCartName
     } = this.state;
 
     if (isLoading) {
@@ -103,7 +243,7 @@ class SingleProduct extends Component {
           productIncart={productIncart}
           cartPrice={total_price}
           />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             {thumbnail && <img
               alt=""
@@ -136,75 +276,76 @@ class SingleProduct extends Component {
               />}
             </div>
           </div>
-          <div style={{ flexWrap: 'wrap', width: '30%', marginLeft: 30 }}>
-            <h4>Home</h4>
-            <p>{description}</p>
-            <p style={{ color: 'red', fontWeight: 500 }}>${price}</p>
+          <div style={{ flexWrap: 'wrap', width: '30%', marginLeft: 30, marginTop: 7 }}>
+            <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>Home</span>
+            <span style={{ marginLeft: 5, marginRight: 5, color: '#A9A9A9', fontSize: 7 }}>&#9830;</span>
+            <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>All categories</span>
+            <span style={{ marginLeft: 5, marginRight: 5, color: '#A9A9A9', fontSize: 7 }}>&#9830;</span>
+            <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>Men's Clothing & Accessories</span>
+            <StarRatings
+              numberOfStars={5}
+              rating={Number(totalRating)}
+              starRatedColor="#FFA500"
+              starDimension="25px"
+              starSpacing="5px"
+            />
+            <p style={{
+              marginTop: 10,
+              fontFamily: 'Montserrat',
+              fontWeight: 'bold',
+              }}
+              >{description}</p>
+            <p style={{ color: 'red', fontWeight: 'bold', fontFamily: 'Montserrat' }}>${price}</p>
             <div>
-              <p>Color</p>
+              <p style={{ fontFamily: 'Montserrat' }}>Color</p>
               <div style={{ display: 'flex' }}>
                 <div style={{
-                  borderRadius: '50%',
-                  height: 15,
-                  width: 15,
                   backgroundColor: 'red',
                   boxShadow: color === 'red' ? '0 0px 2px 4px rgb(16,114,181)' : '',
-                  cursor: 'pointer'
                 }}
+                className="color-choice"
                   onClick={() => this.setColor('red')}
                 />
                 <div
                   style={{
-                  borderRadius: '50%',
-                  height: 15,
-                  width: 15,
                   backgroundColor: 'blue',
                   marginLeft: 15,
                   boxShadow: color === 'blue' ? '0 0px 2px 4px rgb(16,114,181)' : '',
-                  cursor: 'pointer'
                 }}
+                  className="color-choice"
                   onClick={() => this.setColor('blue')}
                 />
                 <div
                   style={{
-                  borderRadius: '50%',
-                  height: 15,
-                  width: 15,
                   backgroundColor: 'green',
                   marginLeft: 15,
                   boxShadow: color === 'green' ? '0 0px 2px 4px rgb(16,114,181)' : '',
-                  cursor: 'pointer'
                 }}
+                  className="color-choice"
                   onClick={() => this.setColor('green')}
                 />
                 <div
                   style={{
-                  borderRadius: '50%',
-                  height: 15,
-                  width: 15,
                   backgroundColor: 'orange',
                   marginLeft: 15,
                   boxShadow: color === 'orange' ? '0 0px 2px 4px rgb(16,114,181)' : '',
-                  cursor: 'pointer'
                 }}
+                  className="color-choice"
                   onClick={() => this.setColor('orange')}
                 />
                 <div
                   style={{
-                  borderRadius: '50%',
-                  height: 15,
-                  width: 15,
                   backgroundColor: 'purple',
                   marginLeft: 15,
                   boxShadow: color === 'purple' ? '0 0px 2px 4px rgb(16,114,181)' : '',
-                  cursor: 'pointer'
                 }}
+                  className="color-choice"
                   onClick={() => this.setColor('purple')}
                 />
               </div>
             </div>
-            <div>
-              <p>Size</p>
+            <div style={{ marginTop: 10 }}>
+              <p style={{ fontFamily: 'Montserrat' }}>Size</p>
               <div style={{ display: 'flex' }}>
                 <p style={{
                   backgroundColor: size === 'S' ? 'red' : '#DCDCDC',
@@ -214,7 +355,8 @@ class SingleProduct extends Component {
                   paddingBottom: 5,
                   fontSize: 12,
                   color: size === 'S' ? '#FFF' : 'black',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontFamily: 'Montserrat'
                 }}
                 onClick={() => this.setSize('S')}
                 >S</p>
@@ -228,6 +370,7 @@ class SingleProduct extends Component {
                   marginLeft: 15,
                   cursor: 'pointer',
                   color: size === 'M' ? '#FFF' : 'black',
+                  fontFamily: 'Montserrat'
                 }}
                 onClick={() => this.setSize('M')}
                 >M</p>
@@ -241,6 +384,7 @@ class SingleProduct extends Component {
                   marginLeft: 15,
                   cursor: 'pointer',
                   color: size === 'L' ? '#FFF' : 'black',
+                  fontFamily: 'Montserrat'
                 }}
                 onClick={() => this.setSize('L')}
                 >L</p>
@@ -254,6 +398,7 @@ class SingleProduct extends Component {
                   marginLeft: 15,
                   cursor: 'pointer',
                   color: size === 'XL' ? '#FFF' : 'black',
+                  fontFamily: 'Montserrat'
                 }}
                 onClick={() => this.setSize('XL')}
                 >XL</p>
@@ -267,56 +412,219 @@ class SingleProduct extends Component {
                   marginLeft: 15,
                   cursor: 'pointer',
                   color: size === 'XXL' ? '#FFF' : 'black',
+                  fontFamily: 'Montserrat'
                 }}
                 onClick={() => this.setSize('XXL')}
                 >XXL</p>
               </div>
             </div>
             <div>
-              <p>Quantity</p>
+              <p style={{ fontFamily: 'Montserrat' }}>Quantity</p>
               <div style={{ display: 'flex' }}>
-                <p style={{
+              <div style={{
                   width: 20,
                   height: 20,
+                  backgroundColor: '#D3D3D3',
                   borderRadius: '50%',
-                  backgroundColor: '#DCDCDC',
                   textAlign: 'center',
-                  marginRight: 15,
+                  marginRight: 10,
                   cursor: 'pointer'
-                }}
-                onClick={() => this.setQuantity('decrement')}
-                >-</p>
-                <p>{quantity}</p>
+                }}>
+                  <p
+                    style={{ marginTop: -3 }}
+                    onClick={() => this.setQuantity('decrement')}
+                  >
+                    -
+                  </p>
+                </div>
                 <p style={{
+                  backgroundColor: '#FFF',
+                  borderStyle: 'solid',
+                  borderWidth: 'thin',
+                  borderColor: '#D3D3D3',
+                  borderRadius: '50%',
+                  width: 30,
+                  textAlign: 'center',
+                  marginTop: -3,
+                  marginRight: 10,
+                  fontFamily: 'Montserrat'
+                }}>{quantity}</p>
+                <div style={{
                   width: 20,
                   height: 20,
+                  backgroundColor: '#D3D3D3',
                   borderRadius: '50%',
-                  backgroundColor: '#DCDCDC',
                   textAlign: 'center',
-                  marginLeft: 15,
+                  marginRight: 10,
                   cursor: 'pointer'
-                }}
-                onClick={() => this.setQuantity('increment')}
-                >+</p>
+                }}>
+                  <p
+                    style={{ marginTop: -3 }}
+                    onClick={() => this.setQuantity('increment')}
+                  >
+                    +
+                  </p>
+                </div>
               </div>
             </div>
-            <button
-              style={{
-                height: 40,
-                width: 150,
-                backgroundColor: 'red',
-                borderRadius: 20,
-                color: '#FFF'
-              }}
-              onClick={this.addToCart}
-            >
-              Add to cart
-            </button>
+            <div style={{ display: 'flex', marginTop: 15 }}>
+              <button
+                style={{
+                  height: 40,
+                  width: itemsInCartName.includes(name) ? 200 : 150,
+                  backgroundColor: disableButton || itemsInCartName.includes(name) ? 'gray' : '#f7436b',
+                  borderRadius: 20,
+                  color: '#FFF',
+                  borderColor: itemsInCartName.includes(name) || disableButton ? 'gray' : '#f7436b',
+                  boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
+                  fontFamily: 'Montserrat',
+                  cursor: disableButton || itemsInCartName.includes(name) ? 'not-allowed' : 'pointer'
+                }}
+                onClick={this.addToCart}
+                disabled={disableButton}
+              >
+                {disableButton ? '....'
+                  : !disableButton && itemsInCartName.includes(name) ? 'Item added to cart'
+                  : 'Add to cart'
+                  }
+              </button>
+              <div style={{
+                marginLeft: 'auto',
+                display: 'flex',
+                marginTop: 5
+                }}
+                >
+                <i className="far fa-heart" style={{
+                  marginRight: 10,
+                  color: '#f7436b',
+                  marginTop: 5,
+                  cursor: 'pointer'
+                }}></i>
+                <p style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>Add to wishlist</p>
+              </div>
+            </div>
           </div>
+        </div>
+        <div style={{
+            marginLeft: 200,
+            backgroundColor: '#FAFAFA',
+            marginRight: 100,
+            marginTop: 30,
+            paddingTop: 20,
+            paddingLeft: 30,
+            paddingRight: 30,
+            marginBottom: 20,
+            paddingBottom: 10
+            }}>
+          <div style={{
+            maxHeight: 400,
+            overflowY: 'scroll',
+          }}>
+            <h5 style={{ marginBottom: 20, fontFamily: 'Montserrat' }}>Product Reviews</h5>
+            {
+              reviews.map((review, index) => (
+                <div key={index} style={{ display: 'flex' }}>
+                  <div>
+                    <StarRatings
+                      numberOfStars={5}
+                      rating={Number(review.rating)}
+                      starRatedColor="#FFA500"
+                      starDimension="15px"
+                      starSpacing="5px"
+                    />
+                    <p style={{
+                      marginTop: 20,
+                      fontWeight: 'bold',
+                      fontFamily: 'Montserrat'
+                    }}>{review.name}</p>
+                    <p style={{
+                      marginTop: -15,
+                      fontSize: 12,
+                      color: '#A9A9A9',
+                      fontFamily: 'Montserrat'
+                    }}>{moment(review.created_on).startOf('day').fromNow()}</p>
+                  </div>
+                  <p style={{ marginLeft: 200, marginTop: 5, fontFamily: 'Montserrat' }}>{review.review}</p>
+                </div>
+              ))
+            }
+          </div>
+          <hr />
+            {isUserLoggedIn && (
+              <div>
+                <h5 style={{ marginBottom: 30, fontFamily: 'Montserrat', marginTop: 25 }}>Add a Review</h5>
+                <div style={{ display: 'flex' }}>
+                  <label style={{ fontFamily: 'Montserrat' }}>Choose a nickname</label>
+                  <input
+                    type="text"
+                    name="nickname"
+                    value={this.state.nickname}
+                    onChange={this.setNickname}
+                    style={{
+                      marginLeft: 200
+                    }}
+                  />
+                </div>
+                <div style={{ display: 'flex', marginTop: 30 }}>
+                  <label style={{ fontFamily: 'Montserrat' }}>Your review</label>
+                  <Input
+                    type="textarea"
+                    name="text"
+                    id="text"
+                    onChange={this.setReview}
+                    value={this.state.reviewString}
+                    style={{
+                      width: 400,
+                      marginLeft: 265,
+                      height: 100
+                    }}
+                  />
+                </div>
+                <div style={{ display: 'flex', marginTop: 30 }}>
+                  <p style={{ fontFamily: 'Montserrat' }}>Overall rating</p>
+                  <div style={{
+                        marginLeft: 258
+                      }}>
+                    <StarRatings
+                      numberOfStars={5}
+                      rating={Number(reviewRating)}
+                      starRatedColor="#FFA500"
+                      starHoverColor="#FFA500"
+                      starDimension="20px"
+                      starSpacing="5px"
+                      name="review"
+                      changeRating={this.setRating}
+                    />
+                  </div>
+                </div>
+                <button style={{
+                  marginLeft: 358,
+                  width: 120,
+                  height: 35,
+                  borderRadius: 25,
+                  backgroundColor: disableReviewButton ? 'gray' : '#f7436b',
+                  color: '#FFF',
+                  marginTop: 15,
+                  marginBottom: 20,
+                  borderColor: '#f7436b',
+                  boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
+                  fontFamily: 'Montserrat',
+                  cursor: disableReviewButton ? 'not-allowed' : 'pointer'
+                }}
+                  onClick={this.submitReview}
+                >
+                  {disableReviewButton ? '.....' : 'Submit'}
+                </button>
+            </div>
+          )}
+          {!isUserLoggedIn && <p className="not-logged-in">You need to be logged in to post reviews. <span onClick={() => this.props.history.push('/login')} className="log-in-link">Log in now</span></p>}
+          {this.renderModal()}
         </div>
       </div>
     )
   }
 }
 
-export default SingleProduct;
+const SingleProductWithToast = withToastManager(SingleProduct);
+
+export default SingleProductWithToast;

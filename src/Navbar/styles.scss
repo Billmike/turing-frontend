@@ -16,3 +16,19 @@
 .deals {
   display: flex;
 }
+
+.fontAwesome {
+  font-family: FontAwesome;
+}
+
+.no-product-found {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  & p {
+    font-family: 'Montserrat';
+    margin-top: 2px;
+    font-size: 25px
+  }
+}

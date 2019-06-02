@@ -1,7 +1,6 @@
 .pagination-class {
   display: flex;
   list-style: none;
-  background-color: gainsboro;
   color: midnightblue;
   justify-content: center;
   cursor: pointer;
@@ -42,4 +41,20 @@
 
 .break {
   margin-top: 4px;
+}
+
+.carousel-style-class {
+  height: 650px;
+  width: 100%
+}
+
+.products-card-wrap {
+  margin-left: 230px;
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel-style-class {
+    height: 400px;
+    width: 100%;
+  }
 }

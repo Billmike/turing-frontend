@@ -1,0 +1,48 @@
+.confirm-order-container {
+  margin-top: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.h2-text-confirm {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+.hr-line {
+  width: 50px;
+  border-color: black;
+}
+
+.order-number-header {
+  text-align: center;
+  font-size: 27px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.order-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.send-confirm {
+  text-align: center;
+  font-family: 'Montserrat';
+  margin-bottom: 25px;
+  color: #f7436b;
+}
+
+.order-header-row {
+  font-weight: 700;
+  font-family: 'Montserrat';
+}
+
+.order-values {
+  opacity: .7;
+  font-family: 'Montserrat';
+}
