@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, HashRouter } from 'react-router-dom';
 import Homepage from './Home';
 import SingleProduct from './SingleProduct';
 import Signup from './Signup';
@@ -18,7 +18,7 @@ toast.configure();
 
 function App() {
   return (
-    <>
+    <HashRouter>
       <BrowserRouter>
         <Switch>
           <ToastProvider>
@@ -33,7 +33,7 @@ function App() {
           </ToastProvider>
         </Switch>
       </BrowserRouter>
-    </>
+    </HashRouter>
   );
 }
 
