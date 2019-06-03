@@ -72,6 +72,7 @@ class Signup extends Component {
   componentClicked = () => console.log('Clicked it')
 
   responseFacebook = async(response) => {
+    console.log('got the response', response)
     const { history, toastManager } = this.props;
     console.log('the response', response);
     const url = 'https://backendapi.turing.com/customers/facebook';
@@ -106,7 +107,7 @@ class Signup extends Component {
     } else {
       fbContent = (
         <FacebookLogin
-          appId="352854622106208"
+          appId="466642734096700"
           fields="name,email,picture"
           onClick={() => this.componentClicked()}
           callback={(response) => this.responseFacebook(response)}
