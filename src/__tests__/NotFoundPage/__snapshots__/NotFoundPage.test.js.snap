@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPage /> renders without crashing 1`] = `
+<div>
+  <div
+    className="not-found-container"
+  >
+    <p
+      className="pnf"
+    >
+      Page not found
+    </p>
+    <button
+      className="back-to-page"
+      onClick={[Function]}
+    >
+      Go back
+    </button>
+  </div>
+</div>
+`;

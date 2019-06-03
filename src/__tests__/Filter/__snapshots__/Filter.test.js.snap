@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filter /> renders without crashing 1`] = `
+<div
+  className="filter-cards-container"
+>
+  <div>
+    <p
+      className="filter-cards-button"
+      onClick={[Function]}
+    >
+      Filter by Category
+    </p>
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={true}
+      mountOnEnter={false}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Form
+        tag="form"
+      >
+        <FormGroup
+          tag="fieldset"
+        >
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={0}
+            labelText="French"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={1}
+            labelText="Italian"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={2}
+            labelText="Irish"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={3}
+            labelText="Animal"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={4}
+            labelText="Flower"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={5}
+            labelText="Christmas"
+            name="category"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            categoryText="Filter by Categories"
+            index={6}
+            labelText="Valentine's"
+            name="category"
+            toggleClick={[Function]}
+          />
+        </FormGroup>
+      </Form>
+    </Collapse>
+  </div>
+  <div>
+    <p
+      className="filter-cards-button"
+      onClick={[Function]}
+    >
+      Filter by Department
+    </p>
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={true}
+      mountOnEnter={false}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Form
+        tag="form"
+      >
+        <FormGroup
+          tag="fieldset"
+        >
+          <RadioButton
+            departmentText="Filter by Department"
+            index={0}
+            labelText="Regional"
+            name="department"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            departmentText="Filter by Department"
+            index={1}
+            labelText="Nature"
+            name="department"
+            toggleClick={[Function]}
+          />
+          <RadioButton
+            departmentText="Filter by Department"
+            index={2}
+            labelText="Seasonal"
+            name="department"
+            toggleClick={[Function]}
+          />
+        </FormGroup>
+      </Form>
+    </Collapse>
+  </div>
+</div>
+`;

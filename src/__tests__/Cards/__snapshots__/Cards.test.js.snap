@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cards /> renders without crashing 1`] = `
+<div
+  onClick={[Function]}
+  style={
+    Object {
+      "borderRadius": 5,
+      "boxShadow": "0.5rem 0.5rem 3rem rgba(0,0,0,0.2)",
+      "boxSizing": "border-box",
+      "cursor": "pointer",
+      "marginBottom": 15,
+      "marginLeft": 30,
+      "marginTop": 50,
+      "overflow": "hidden",
+      "width": 200,
+    }
+  }
+>
+  <Card
+    tag="div"
+  >
+    <CardImg
+      alt="Card image cap"
+      src="alsace.gif"
+      tag="img"
+      top={true}
+      width="100%"
+    />
+    <CardBody
+      tag="div"
+    >
+      <CardTitle
+        style={
+          Object {
+            "fontFamily": "Montserrat",
+            "fontWeight": "bold",
+            "textAlign": "center",
+          }
+        }
+        tag="div"
+      />
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <CardSubtitle
+          style={
+            Object {
+              "fontFamily": "Montserrat",
+              "marginLeft": 15,
+              "textDecoration": "line-through",
+            }
+          }
+          tag="div"
+        >
+          $
+        </CardSubtitle>
+        <CardSubtitle
+          style={
+            Object {
+              "fontFamily": "Montserrat",
+            }
+          }
+          tag="div"
+        >
+          $
+        </CardSubtitle>
+      </div>
+    </CardBody>
+  </Card>
+</div>
+`;

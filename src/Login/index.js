@@ -85,6 +85,7 @@ class Login extends Component {
       history.push('/');
       toastManager.add('Login successful', { appearance: 'success' })
     } catch (error) {
+      console.log('what is the error', error);
       toastManager.add('Signup error', { appearance: 'error' });
     }
   }

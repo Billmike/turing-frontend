@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> renders without crashing 1`] = `
+<label
+  className="radio-button-container"
+>
+  <span
+    className="text-span"
+  />
+  <input
+    checked="checked"
+    onClick={[Function]}
+    type="radio"
+  />
+  <span
+    className="checkmark"
+  />
+</label>
+`;

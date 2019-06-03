@@ -1,7 +1,7 @@
 import React from 'react';
-import Slider from 'react-slick';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 import axios from 'axios';
+import { withToastManager } from 'react-toast-notifications';
 import { Emojione } from 'react-emoji-render';
 import Cards from '../Cards';
 import Navbar from '../Navbar';
@@ -58,16 +58,21 @@ class HomePage extends React.Component {
 
   async componentDidMount() {
     const { page } = this.state;
+    const { toastManager } = this.props;
     this.setState({ isLoading: true });
     const getCartID = await localStorage.getItem('cartId');
-    if (!getCartID) {
-      this.setState({ productIncart: [] })
-    } else {
-      const cartItem = await getCartItems(getCartID);
-      const totalPrice = await getCartPrice(getCartID);
-      this.setState({ productIncart: cartItem.data, total_price: totalPrice.data.total_amount });
+    try {
+      if (!getCartID) {
+        this.setState({ productIncart: [] })
+      } else {
+        const cartItem = await getCartItems(getCartID);
+        const totalPrice = await getCartPrice(getCartID);
+        this.setState({ productIncart: cartItem.data, total_price: totalPrice.data.total_amount });
+      }
+      this.fetchProducts(page);
+    } catch (error) {
+      toastManager.add('Error occurred', { appearance: 'error' })
     }
-    this.fetchProducts(page);
   }
 
   fetchProducts = async (page) => {
@@ -257,4 +262,6 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+const HomePageWithToast = withToastManager(HomePage);
+
+export default HomePageWithToast;

@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> renders without crashing 1`] = `
+<div>
+  <Navbar
+    expand="md"
+    light={true}
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+      }
+    }
+    tag="nav"
+  >
+    <NavbarToggler
+      onClick={[Function]}
+      tag="button"
+      type="button"
+    />
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={false}
+      mountOnEnter={false}
+      navbar={true}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Nav
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <p
+          style={
+            Object {
+              "fontFamily": "Montserrat",
+              "marginLeft": 20,
+              "marginTop": 8,
+            }
+          }
+        >
+          Hi
+        </p>
+        <NavItem
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
+          }
+          tag="li"
+        >
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#f7436b",
+                "cursor": "pointer",
+                "fontFamily": "Montserrat",
+                "fontWeight": "bold",
+              }
+            }
+            tag="a"
+          >
+            Sign in
+          </NavLink>
+        </NavItem>
+        <NavItem
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
+          }
+          tag="li"
+        >
+          <p
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+                "marginTop": 8,
+              }
+            }
+          >
+            Or
+          </p>
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "color": "#f7436b",
+                "cursor": "pointer",
+                "fontFamily": "Montserrat",
+                "fontWeight": "bold",
+              }
+            }
+            tag="a"
+          >
+            Register
+          </NavLink>
+        </NavItem>
+      </Nav>
+      <Nav
+        className="ml-auto"
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+                "display": "flex",
+              }
+            }
+            tag="a"
+          >
+            <i
+              className="fas fa-shopping-bag"
+              style={
+                Object {
+                  "color": "black",
+                  "fontSize": 20,
+                  "position": "absolute",
+                }
+              }
+            />
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#f7436b",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "height": 20,
+                  "marginLeft": 10,
+                  "marginTop": -10,
+                  "textAlign": "center",
+                  "width": 20,
+                  "zIndex": 10,
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "fontFamily": "Montserrat",
+                    "fontSize": 14,
+                    "marginTop": 0,
+                  }
+                }
+              >
+                0
+              </p>
+            </div>
+          </NavLink>
+        </NavItem>
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+              }
+            }
+            tag="a"
+          >
+            Your Bag: 
+          </NavLink>
+        </NavItem>
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+              }
+            }
+            tag="a"
+          >
+            $ 
+            0.00
+             
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+  <Navbar
+    expand="md"
+    light={true}
+    style={
+      Object {
+        "backgroundColor": "black",
+      }
+    }
+    tag="nav"
+  >
+    <NavbarToggler
+      onClick={[Function]}
+      tag="button"
+      type="button"
+    />
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={false}
+      mountOnEnter={false}
+      navbar={true}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Nav
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <NavItem
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "row",
+            }
+          }
+          tag="li"
+        >
+          <NavLink
+            href="/"
+            style={
+              Object {
+                "color": "#f7436b",
+                "fontFamily": "Montserrat",
+                "fontSize": 20,
+              }
+            }
+            tag="a"
+          >
+            SHOPMATE
+          </NavLink>
+        </NavItem>
+      </Nav>
+      <Nav
+        className="ml-auto"
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+            tag="a"
+          >
+            <i
+              className="fas fa-shopping-bag"
+              style={
+                Object {
+                  "color": "#FFF",
+                  "fontSize": 20,
+                  "position": "absolute",
+                }
+              }
+            />
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#f7436b",
+                  "borderRadius": "50%",
+                  "color": "#FFF",
+                  "height": 20,
+                  "marginLeft": 10,
+                  "marginTop": -10,
+                  "textAlign": "center",
+                  "width": 20,
+                  "zIndex": 10,
+                }
+              }
+            >
+              <p
+                style={
+                  Object {
+                    "fontFamily": "Montserrat",
+                    "fontSize": 14,
+                    "marginTop": 0,
+                  }
+                }
+              >
+                0
+              </p>
+            </div>
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+</div>
+`;
