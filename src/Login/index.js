@@ -86,7 +86,11 @@ class Login extends Component {
       toastManager.add('Login successful', { appearance: 'success' })
     } catch (error) {
       console.log('what is the error', error.response);
-      toastManager.add('Signup error', { appearance: 'error' });
+      if (error.response.data.error) {
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+      } else {
+        toastManager.add('Unable to Log in to Facebook at this moment', { appearance: 'error' })
+      }
     }
   }
 
