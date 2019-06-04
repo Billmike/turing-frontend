@@ -14,3 +14,131 @@
   width: 15px;
   cursor: pointer;
 }
+
+.single-products-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.image-wrapper-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.single-product-detail {
+  flex-wrap: wrap;
+  width: 30%;
+  margin-left: 30px;
+  margin-top: 7px;
+}
+
+.size-style {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.size-style-left {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-family: 'Montserrat';
+  cursor: pointer;
+}
+
+.reviews-container {
+  margin-left: 200px;
+  background-color: #FAFAFA;
+  margin-right: 100px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.input-text-box-style {
+  width: 400px !important;
+  margin-left: 265px;
+  height: 100px !important;
+}
+
+.star-rating-style {
+  margin-left: 258px;
+}
+
+.input-text-style {
+  margin-left: 200px;
+}
+
+.button-style-review {
+  margin-left: 358px;
+  width: 120px;
+  height: 35px;
+  border-radius: 25px;
+  color: #FFF;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-color: #f7436b;
+  font-family: 'Montserrat';
+}
+
+.star-wrapper {
+  display: flex;
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .single-products-container {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .image-wrapper-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .single-product-detail {
+    width: 90%;
+  }
+
+  .reviews-container {
+    margin: 0;
+  }
+
+  .responsive-style-image {
+    margin-left: 30px;
+  }
+
+  .input-text-style {
+    margin-left: 0px;
+  }
+
+  .input-text-box-style {
+    margin-left: 0px;
+    width: 100% !important;
+  }
+
+  .star-rating-style {
+    margin-left: 0px;
+  }
+
+  .button-style-review {
+    margin-left: 0px;
+  }
+
+  .star-wrapper {
+    display: block;
+  }
+}

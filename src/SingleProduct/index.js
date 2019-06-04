@@ -243,8 +243,8 @@ export class SingleProduct extends Component {
           productIncart={productIncart}
           cartPrice={total_price}
           />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 30 }}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="single-products-container">
+          <div className="image-wrapper-container">
             {thumbnail && <img
               alt=""
               src={require(`../assets/product_images/${thumbnail}`)}
@@ -262,6 +262,7 @@ export class SingleProduct extends Component {
                   width: 70,
                   cursor: 'pointer'
                 }}
+                className="responsive-style-image"
                 onClick={() => this.changeMainImage(image)}
               />}
               {image_2 && <img
@@ -272,23 +273,26 @@ export class SingleProduct extends Component {
                   width: 70,
                   cursor: 'pointer'
                 }}
+                className="responsive-style-image"
                 onClick={() => this.changeMainImage(image_2)}
               />}
             </div>
           </div>
-          <div style={{ flexWrap: 'wrap', width: '30%', marginLeft: 30, marginTop: 7 }}>
+          <div className="single-product-detail">
             <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>Home</span>
             <span style={{ marginLeft: 5, marginRight: 5, color: '#A9A9A9', fontSize: 7 }}>&#9830;</span>
             <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>All categories</span>
             <span style={{ marginLeft: 5, marginRight: 5, color: '#A9A9A9', fontSize: 7 }}>&#9830;</span>
             <span style={{ color: '#A9A9A9', fontFamily: 'Montserrat' }}>Men's Clothing & Accessories</span>
-            <StarRatings
-              numberOfStars={5}
-              rating={Number(totalRating)}
-              starRatedColor="#FFA500"
-              starDimension="25px"
-              starSpacing="5px"
-            />
+            <div>
+              <StarRatings
+                numberOfStars={5}
+                rating={Number(totalRating)}
+                starRatedColor="#FFA500"
+                starDimension="25px"
+                starSpacing="5px"
+              />
+            </div>
             <p style={{
               marginTop: 10,
               fontFamily: 'Montserrat',
@@ -349,71 +353,37 @@ export class SingleProduct extends Component {
               <div style={{ display: 'flex' }}>
                 <p style={{
                   backgroundColor: size === 'S' ? 'red' : '#DCDCDC',
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                  fontSize: 12,
                   color: size === 'S' ? '#FFF' : 'black',
-                  cursor: 'pointer',
-                  fontFamily: 'Montserrat'
                 }}
+                className="size-style-left"
                 onClick={() => this.setSize('S')}
                 >S</p>
                 <p style={{
                   backgroundColor: size === 'M' ? 'red' : '#DCDCDC',
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                  fontSize: 12,
-                  marginLeft: 15,
-                  cursor: 'pointer',
                   color: size === 'M' ? '#FFF' : 'black',
-                  fontFamily: 'Montserrat'
                 }}
+                className="size-style"
                 onClick={() => this.setSize('M')}
                 >M</p>
                 <p style={{
                   backgroundColor: size === 'L' ? 'red' : '#DCDCDC',
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                  fontSize: 12,
-                  marginLeft: 15,
-                  cursor: 'pointer',
                   color: size === 'L' ? '#FFF' : 'black',
-                  fontFamily: 'Montserrat'
                 }}
+                className="size-style"
                 onClick={() => this.setSize('L')}
                 >L</p>
                 <p style={{
                   backgroundColor: size === 'XL' ? 'red' : '#DCDCDC',
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                  fontSize: 12,
-                  marginLeft: 15,
-                  cursor: 'pointer',
                   color: size === 'XL' ? '#FFF' : 'black',
-                  fontFamily: 'Montserrat'
                 }}
+                className="size-style"
                 onClick={() => this.setSize('XL')}
                 >XL</p>
                 <p style={{
                   backgroundColor: size === 'XXL' ? 'red' : '#DCDCDC',
-                  paddingLeft: 10,
-                  paddingRight: 10,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                  fontSize: 12,
-                  marginLeft: 15,
-                  cursor: 'pointer',
                   color: size === 'XXL' ? '#FFF' : 'black',
-                  fontFamily: 'Montserrat'
                 }}
+                className="size-style"
                 onClick={() => this.setSize('XXL')}
                 >XXL</p>
               </div>
@@ -505,17 +475,7 @@ export class SingleProduct extends Component {
             </div>
           </div>
         </div>
-        <div style={{
-            marginLeft: 200,
-            backgroundColor: '#FAFAFA',
-            marginRight: 100,
-            marginTop: 30,
-            paddingTop: 20,
-            paddingLeft: 30,
-            paddingRight: 30,
-            marginBottom: 20,
-            paddingBottom: 10
-            }}>
+        <div className="reviews-container">
           <div style={{
             maxHeight: 400,
             overflowY: 'scroll',
@@ -552,20 +512,18 @@ export class SingleProduct extends Component {
           <hr />
             {isUserLoggedIn && (
               <div>
-                <h5 style={{ marginBottom: 30, fontFamily: 'Montserrat', marginTop: 25 }}>Add a Review</h5>
-                <div style={{ display: 'flex' }}>
+                <h5 style={{ fontFamily: 'Montserrat', marginTop: 25 }}>Add a Review</h5>
+                <div className="star-wrapper">
                   <label style={{ fontFamily: 'Montserrat' }}>Choose a nickname</label>
                   <input
                     type="text"
                     name="nickname"
                     value={this.state.nickname}
                     onChange={this.setNickname}
-                    style={{
-                      marginLeft: 200
-                    }}
+                    className="input-text-style"
                   />
                 </div>
-                <div style={{ display: 'flex', marginTop: 30 }}>
+                <div className="star-wrapper">
                   <label style={{ fontFamily: 'Montserrat' }}>Your review</label>
                   <Input
                     type="textarea"
@@ -573,18 +531,12 @@ export class SingleProduct extends Component {
                     id="text"
                     onChange={this.setReview}
                     value={this.state.reviewString}
-                    style={{
-                      width: 400,
-                      marginLeft: 265,
-                      height: 100
-                    }}
+                    className="input-text-box-style"
                   />
                 </div>
-                <div style={{ display: 'flex', marginTop: 30 }}>
+                <div className="star-wrapper">
                   <p style={{ fontFamily: 'Montserrat' }}>Overall rating</p>
-                  <div style={{
-                        marginLeft: 258
-                      }}>
+                  <div className="star-rating-style">
                     <StarRatings
                       numberOfStars={5}
                       rating={Number(reviewRating)}
@@ -598,19 +550,11 @@ export class SingleProduct extends Component {
                   </div>
                 </div>
                 <button style={{
-                  marginLeft: 358,
-                  width: 120,
-                  height: 35,
-                  borderRadius: 25,
                   backgroundColor: disableReviewButton ? 'gray' : '#f7436b',
-                  color: '#FFF',
-                  marginTop: 15,
-                  marginBottom: 20,
-                  borderColor: '#f7436b',
                   boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
-                  fontFamily: 'Montserrat',
                   cursor: disableReviewButton ? 'not-allowed' : 'pointer'
                 }}
+                className="button-style-review"
                   onClick={this.submitReview}
                 >
                   {disableReviewButton ? '.....' : 'Submit'}

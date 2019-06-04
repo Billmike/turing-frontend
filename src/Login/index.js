@@ -62,14 +62,17 @@ export class Login extends Component {
       history.push('/');
       toastManager.add('Login successful!', { appearance: 'success' });
     } catch (error) {
-      toastManager.add('Login error', { appearance: 'error' })
+      if (error.response.data.error) {
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+      } else {
+        toastManager.add('Unable to Login at this moment', { appearance: 'error' })
+      }
     }
   }
 
   componentClicked = () => console.log('Clicked it')
 
   responseFacebook = async(response) => {
-    console.log('got the response', response)
     const { history, toastManager } = this.props;
     const url = 'https://backendapi.turing.com/customers/facebook';
     const options = {
@@ -86,7 +89,6 @@ export class Login extends Component {
       history.push('/');
       toastManager.add('Login successful', { appearance: 'success' })
     } catch (error) {
-      console.log('what is the error', error.response);
       if (error.response.data.error) {
         toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
       } else {

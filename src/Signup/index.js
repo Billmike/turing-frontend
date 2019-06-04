@@ -65,7 +65,11 @@ export class Signup extends Component {
       history.push('/');
       toastManager.add('Signup successful!', { appearance: 'success' });
     } catch (error) {
-      toastManager.add('An error occurred while signing up', { appearance: 'error' } );
+      if (error.response.data.error) {
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+      } else {
+        toastManager.add('Unable to signup at this moment', { appearance: 'error' });
+      }
     }
   }
 
@@ -93,7 +97,7 @@ export class Signup extends Component {
       if (error.response.data.error) {
         toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
       } else {
-        toastManager.add('Unable to signup with Facebook at this moment', { appearance: 'error' })
+        toastManager.add('Unable to signup with Facebook at this moment', { appearance: 'error' });
       }
     }
   }

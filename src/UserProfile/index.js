@@ -25,6 +25,7 @@ export class UserProfile extends Component {
   }
 
   async componentDidMount() {
+    const { toastManager } = this.props;
     const getCartID = await localStorage.getItem('cartId');
     const accessToken = await localStorage.getItem('user');
     const parsedAccessToken = JSON.parse(accessToken);
@@ -38,7 +39,11 @@ export class UserProfile extends Component {
       const regionsData = await axios.get('https://backendapi.turing.com/shipping/regions');
       this.setState({ userObj: retrieveUser.data, regions: regionsData.data })
     } catch (error) {
-      console.log('error retrieving user', error)
+      if (error.response.data.error) {
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+      } else {
+        toastManager.add('Unable to fetch user at this moment', { appearance: 'error' })
+      }
     }
     if (!getCartID) {
       this.setState({ productInCart: [] })
@@ -109,7 +114,11 @@ export class UserProfile extends Component {
       toastManager.add('Update successful', { appearance: 'success' });
     } catch (error) {
       this.setState({ disableButton: false })
-      toastManager.add('Update successful', { appearance: 'error' });
+      if (error.response.data.error) {
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+      } else {
+        toastManager.add('Unable to update your profile at this moment', { appearance: 'error' })
+      }
     }
   }
 
