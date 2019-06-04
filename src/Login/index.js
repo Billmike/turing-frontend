@@ -9,7 +9,7 @@ import { validateSignin } from '../utils/validator';
 import '../utils/toastrconfig';
 import './style.scss';
 
-class Login extends Component {
+export class Login extends Component {
   state = {
     email: '',
     password: '',
@@ -104,7 +104,7 @@ class Login extends Component {
     } else {
       fbContent = (
         <FacebookLogin
-          appId="466642734096700"
+          appId="352854622106208"
           fields="name,email,picture"
           onClick={() => this.componentClicked()}
           callback={(response) => this.responseFacebook(response)}

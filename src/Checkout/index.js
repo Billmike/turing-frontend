@@ -15,7 +15,7 @@ const REGIONS = {
   4: 'Rest of the World'
 };
 
-class Checkout extends Component {
+export class Checkout extends Component {
   state = {
     productIncart: [],
     total_price: '0.00',

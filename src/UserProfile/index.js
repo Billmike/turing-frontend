@@ -13,7 +13,7 @@ const REGIONS = {
   4: 'Rest of the World'
 };
 
-class UserProfile extends Component {
+export class UserProfile extends Component {
   state = {
     productInCart: [],
     total_price: '',

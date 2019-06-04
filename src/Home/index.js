@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
 import axios from 'axios';
 import { withToastManager } from 'react-toast-notifications';
 import { Emojione } from 'react-emoji-render';
@@ -12,7 +12,6 @@ import {
   fetchProducts,
   searchProducts
 } from '../utils/apiCalls';
-import Categories from '../Categories';
 import Filters from '../Filters';
 import Paginate from 'react-paginate';
 import image1 from '../assets/bags.jpg';
@@ -38,7 +37,7 @@ const ITEMS = [
   }
 ]
 
-class HomePage extends React.Component {
+export class HomePage extends React.Component {
   state = {
     products: [],
     isLoading: false,
@@ -163,14 +162,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-
     const { history } = this.props;
     const {
       products,
@@ -217,10 +208,8 @@ class HomePage extends React.Component {
           <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
         </Carousel>
         { isLoading && <Spinner /> }
-        {/* {!isLoading && <Categories category={this.state.category} setCategory={this.setCategory} />} */}
         {!isLoading && <Filters hasSearched={hasSearched} searchedProducts={searchedProducts} filterCategory={this.setCategory} setDepartmentFilter={this.setDepartmentFilter} />}
         {!isLoading && <div className="products-card-wrap" style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {/* <Filters hasSearched={hasSearched} searchedProducts={searchedProducts} filterCategory={this.setCategory} setDepartmentFilter={this.setDepartmentFilter} /> */}
           {
             hasSearched && searchedProducts.length > 0 ?
             searchedProducts.map((product, index) => (

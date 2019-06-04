@@ -8,7 +8,7 @@ import Spinner from '../Spinner';
 import Navbar from '../Navbar';
 import './styles.scss';
 
-class SingleProduct extends Component {
+export class SingleProduct extends Component {
   state = {
     product: {},
     size: '',
