@@ -64,8 +64,10 @@ export class Login extends Component {
     } catch (error) {
       if (error.response.data.error) {
         toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        this.setState({ errors: {}, disabledButton: false })
       } else {
-        toastManager.add('Unable to Login at this moment', { appearance: 'error' })
+        toastManager.add('Unable to Login at this moment', { appearance: 'error' });
+        this.setState({ errors: {}, disabledButton: false })
       }
     }
   }

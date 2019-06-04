@@ -67,8 +67,10 @@ export class Signup extends Component {
     } catch (error) {
       if (error.response.data.error) {
         toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        this.setState({ errors: {}, disabledButton: false });
       } else {
         toastManager.add('Unable to signup at this moment', { appearance: 'error' });
+        this.setState({ errors: {}, disabledButton: false });
       }
     }
   }

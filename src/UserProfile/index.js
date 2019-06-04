@@ -113,7 +113,7 @@ export class UserProfile extends Component {
       this.setState({ userObj: {}, errors: {}, disableButton: false });
       toastManager.add('Update successful', { appearance: 'success' });
     } catch (error) {
-      this.setState({ disableButton: false })
+      this.setState({ disableButton: false, errors: {} })
       if (error.response.data.error) {
         toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
       } else {
