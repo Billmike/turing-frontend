@@ -4,6 +4,7 @@ import toastr from 'toastr';
 import StripeCheckout from 'react-stripe-checkout';
 import { withToastManager } from 'react-toast-notifications';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { validateProfile } from '../utils/validator';
 import Navbar from '../Navbar';
 import Spinner from '../Spinner';
 import '../utils/toastrconfig';
@@ -23,7 +24,8 @@ export class Checkout extends Component {
     isLoading: false,
     regions: [],
     userObj: {},
-    orderId: 0
+    orderId: 0,
+    isButtonDisabled: true,
   }
 
   async componentDidMount() {
@@ -125,6 +127,13 @@ export class Checkout extends Component {
     }
   }
 
+  validateUserProfile = () => {
+    const { userObj: { address_1, city, region, postal_code, country } } = this.state;
+    const dataToValidate = { address_1: address_1 || '', city: city || '', region: region || '', postal_code: postal_code || '', country: country || '' };
+    const { isValid } = validateProfile(dataToValidate);
+    return !isValid;
+  }
+
   render() {
     const {
       productIncart,
@@ -142,7 +151,8 @@ export class Checkout extends Component {
       } } = this.state;
     const { history } = this.props;
     const stripePrice = Number(total_price) * 100;
-    console.log('user obj')
+    const payWithCardButtonDisabled = this.validateUserProfile();
+    console.log('value of pay with user card', payWithCardButtonDisabled)
 
     if (isLoading) {
       return <Spinner />
@@ -221,12 +231,13 @@ export class Checkout extends Component {
               type="text" name="country" id="country" placeholder="Country" onChange={this.updateUserValue} />
           </FormGroup>
           </Form>
-          <div onClick={() => this.placeOrder()}>
+          <div onClick={() => this.placeOrder()} className={payWithCardButtonDisabled ? "stripe-checkout-button-disabled" : ""}>
             <StripeCheckout
               token={this.getToken}
               stripeKey="pk_test_NcwpaplBCuTL6I0THD44heRe"
               amount={stripePrice}
               name="SHOPMATE INC."
+              label={payWithCardButtonDisabled ? "Fill in all required fields to proceed" : "Pay with your card"}
             />
           </div>
         </div>

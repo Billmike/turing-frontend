@@ -11,3 +11,16 @@
   font-family: 'Montserrat';
   font-size: 25px;
 }
+
+.stripe-checkout-button-disabled {
+  pointer-events: none;
+  & button {
+    background: none !important;
+
+    & span {
+      background-image: none !important;
+      background-color: gray !important;
+      cursor: not-allowed;
+    }
+  }
+}
