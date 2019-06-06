@@ -71,7 +71,7 @@ class NavbarComponent extends Component {
                   {customer.name}
                 </DropdownToggle>
                 <DropdownMenu left>
-                  <DropdownItem onClick={() => history.push('/profile')} style={{ color: '#f7436b', fontFamily: 'Montserrat' }}>
+                  <DropdownItem onClick={() => history.push('/user')} style={{ color: '#f7436b', fontFamily: 'Montserrat' }}>
                     MY PROFILE
                   </DropdownItem>
                   <DropdownItem divider />
