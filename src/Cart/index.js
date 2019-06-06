@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import toastr from 'toastr';
 import axios from 'axios';
 import { getCartItems, getCartPrice } from '../utils/apiCalls';
+import { withToastManager } from 'react-toast-notifications';
 import Navbar from '../Navbar';
 import { Table } from 'reactstrap';
 import Spinner from '../Spinner';
 import './styles.scss';
 
-class Cart extends Component {
+export class Cart extends Component {
   state = {
     productIncart: [],
     total_price: '',
@@ -227,4 +228,6 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+const CartWithToast = withToastManager(Cart);
+
+export default CartWithToast;

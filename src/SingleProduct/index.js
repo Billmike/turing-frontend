@@ -107,7 +107,7 @@ export class SingleProduct extends Component {
       const namesOfItemsInCart = updateQuantity.data.map(item => item.name);
       this.setState({ productIncart: updateQuantity.data, total_price: totalPrice.data.total_amount, isModalOpen: true, disableButton: false, itemsInCartName: namesOfItemsInCart })
     } catch (error) {
-      toastManager.add('An error occurred', { appearance: 'error' })
+      toastManager.add('An error occurred', { appearance: 'error', autoDismiss: true })
     }
   }
 
@@ -154,7 +154,7 @@ export class SingleProduct extends Component {
       const newReviewsInState = [newReviewData, ...reviews];
       this.setState({ reviews: newReviewsInState, reviewString: '', nickname: '', disableReviewButton: false });
     } catch (error) {
-      toastManager.add('Error while adding review', { appearance: 'error' })
+      toastManager.add('Error while adding review', { appearance: 'error', autoDismiss: true })
     }
   }
 

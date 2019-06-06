@@ -94,9 +94,9 @@ export class Checkout extends Component {
       const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`);
       this.setState({ productIncart: cartItem.data, total_price: totalPrice.data.total_price });
       history.push('/confirm');
-      toastManager.add('Order created successfully', { appearance: 'success' });
+      toastManager.add('Order created successfully', { appearance: 'success', autoDismiss: true });
     } catch (error) {
-      toastManager.add('An error occurred.', { appearance: 'error' });
+      toastManager.add('An error occurred.', { appearance: 'error', autoDismiss: true });
     }
   }
 
@@ -120,10 +120,9 @@ export class Checkout extends Component {
       }
       const postOrder = await axios(options);
       await localStorage.setItem('orderId', JSON.stringify(postOrder.data.orderId));
-      this.setState({ orderId: postOrder.data.orderId })
-      console.log('the post order is successful', postOrder, total_price);
+      this.setState({ orderId: postOrder.data.orderId });
     } catch (error) {
-      toastManager.add('An error occurred.', { appearance: 'error' });
+      toastManager.add('An error occurred.', { appearance: 'error', autoDismiss: true });
     }
   }
 
@@ -152,7 +151,6 @@ export class Checkout extends Component {
     const { history } = this.props;
     const stripePrice = Number(total_price) * 100;
     const payWithCardButtonDisabled = this.validateUserProfile();
-    console.log('value of pay with user card', payWithCardButtonDisabled)
 
     if (isLoading) {
       return <Spinner />

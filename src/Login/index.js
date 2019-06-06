@@ -60,13 +60,13 @@ export class Login extends Component {
       localStorage.setItem('user', stringifyResponse);
       this.setState({ disabledButton: false })
       history.push('/');
-      toastManager.add('Login successful!', { appearance: 'success' });
+      toastManager.add('Login successful!', { appearance: 'success', autoDismiss: true });
     } catch (error) {
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
         this.setState({ errors: {}, disabledButton: false })
       } else {
-        toastManager.add('Unable to Login at this moment', { appearance: 'error' });
+        toastManager.add('Unable to Login at this moment', { appearance: 'error', autoDismiss: true });
         this.setState({ errors: {}, disabledButton: false })
       }
     }
@@ -89,12 +89,12 @@ export class Login extends Component {
       const saveUserData = JSON.stringify(loginFacebook.data);
       localStorage.setItem('user', saveUserData);
       history.push('/');
-      toastManager.add('Login successful', { appearance: 'success' })
+      toastManager.add('Login successful', { appearance: 'success', autoDismiss: true })
     } catch (error) {
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
       } else {
-        toastManager.add('Unable to Log in to Facebook at this moment', { appearance: 'error' })
+        toastManager.add('Unable to Log in to Facebook at this moment', { appearance: 'error', autoDismiss: true })
       }
     }
   }

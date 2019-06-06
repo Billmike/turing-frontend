@@ -32,3 +32,17 @@
     font-size: 25px
   }
 }
+
+.search-bar-style {
+  margin-top: 5px;
+  border-radius: 20px;
+  width: 500px;
+  margin-right: 80px;
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .search-bar-style {
+    width: 200px;
+  }
+}

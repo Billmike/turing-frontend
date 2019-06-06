@@ -47,7 +47,7 @@ class Filter extends Component {
 
             disabled={searchedProducts && hasSearched}
             onClick={() => this.toggle('category')}
-            className={searchedProducts && hasSearched ? "filter-cards-button-disabled" : "filter-cards-button"}
+            className={"filter-cards-button"}
             >
             Filter by Category
           </p>
@@ -73,7 +73,7 @@ class Filter extends Component {
           <p
             disabled={searchedProducts && hasSearched}
             onClick={() => this.toggle('department')}
-            className={searchedProducts && hasSearched ? "filter-cards-button-disabled" : "filter-cards-button"}>
+            className={"filter-cards-button"}>
             Filter by Department
           </p>
           <Collapse isOpen={true}>

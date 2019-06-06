@@ -63,13 +63,13 @@ export class Signup extends Component {
       localStorage.setItem('user', saveUserData);
       this.setState({ disabledButton: false })
       history.push('/');
-      toastManager.add('Signup successful!', { appearance: 'success' });
+      toastManager.add('Signup successful!', { appearance: 'success', autoDismiss: true });
     } catch (error) {
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
         this.setState({ errors: {}, disabledButton: false });
       } else {
-        toastManager.add('Unable to signup at this moment', { appearance: 'error' });
+        toastManager.add('Unable to signup at this moment', { appearance: 'error', autoDismiss: true });
         this.setState({ errors: {}, disabledButton: false });
       }
     }
@@ -97,9 +97,9 @@ export class Signup extends Component {
       toastManager.add('Signup successful!', { appearance: 'success' })
     } catch (error) {
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
       } else {
-        toastManager.add('Unable to signup with Facebook at this moment', { appearance: 'error' });
+        toastManager.add('Unable to signup with Facebook at this moment', { appearance: 'error', autoDismiss: true });
       }
     }
   }

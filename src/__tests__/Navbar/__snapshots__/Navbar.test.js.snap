@@ -175,6 +175,7 @@ exports[`<Navbar /> renders without crashing 1`] = `
             onClick={[Function]}
             style={
               Object {
+                "cursor": "pointer",
                 "fontFamily": "Montserrat",
               }
             }
@@ -190,6 +191,7 @@ exports[`<Navbar /> renders without crashing 1`] = `
             onClick={[Function]}
             style={
               Object {
+                "cursor": "pointer",
                 "fontFamily": "Montserrat",
               }
             }
@@ -232,6 +234,11 @@ exports[`<Navbar /> renders without crashing 1`] = `
       onExit={[Function]}
       onExited={[Function]}
       onExiting={[Function]}
+      style={
+        Object {
+          "justifyContent": "space-between",
+        }
+      }
       tag="div"
       timeout={350}
       unmountOnExit={false}
@@ -266,7 +273,7 @@ exports[`<Navbar /> renders without crashing 1`] = `
         </NavItem>
       </Nav>
       <Nav
-        className="ml-auto"
+        className=""
         navbar={true}
         tag="ul"
         vertical={false}
@@ -278,6 +285,7 @@ exports[`<Navbar /> renders without crashing 1`] = `
             onClick={[Function]}
             style={
               Object {
+                "cursor": "pointer",
                 "display": "flex",
               }
             }

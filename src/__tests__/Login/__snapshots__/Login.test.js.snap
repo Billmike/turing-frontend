@@ -304,6 +304,7 @@ exports[`<Login /> renders without crashing 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
+                                "cursor": "pointer",
                                 "fontFamily": "Montserrat",
                               }
                             }
@@ -314,6 +315,7 @@ exports[`<Login /> renders without crashing 1`] = `
                               onClick={[Function]}
                               style={
                                 Object {
+                                  "cursor": "pointer",
                                   "fontFamily": "Montserrat",
                                 }
                               }
@@ -333,6 +335,7 @@ exports[`<Login /> renders without crashing 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
+                                "cursor": "pointer",
                                 "fontFamily": "Montserrat",
                               }
                             }
@@ -343,6 +346,7 @@ exports[`<Login /> renders without crashing 1`] = `
                               onClick={[Function]}
                               style={
                                 Object {
+                                  "cursor": "pointer",
                                   "fontFamily": "Montserrat",
                                 }
                               }
@@ -408,6 +412,11 @@ exports[`<Login /> renders without crashing 1`] = `
               onExit={[Function]}
               onExited={[Function]}
               onExiting={[Function]}
+              style={
+                Object {
+                  "justifyContent": "space-between",
+                }
+              }
               tag="div"
               timeout={350}
               unmountOnExit={false}
@@ -429,7 +438,11 @@ exports[`<Login /> renders without crashing 1`] = `
               >
                 <div
                   className="collapse navbar-collapse"
-                  style={Object {}}
+                  style={
+                    Object {
+                      "justifyContent": "space-between",
+                    }
+                  }
                 >
                   <Nav
                     navbar={true}
@@ -488,13 +501,13 @@ exports[`<Login /> renders without crashing 1`] = `
                     </ul>
                   </Nav>
                   <Nav
-                    className="ml-auto"
+                    className=""
                     navbar={true}
                     tag="ul"
                     vertical={false}
                   >
                     <ul
-                      className="ml-auto navbar-nav"
+                      className="navbar-nav"
                     >
                       <NavItem
                         tag="li"
@@ -506,6 +519,7 @@ exports[`<Login /> renders without crashing 1`] = `
                             onClick={[Function]}
                             style={
                               Object {
+                                "cursor": "pointer",
                                 "display": "flex",
                               }
                             }
@@ -516,6 +530,7 @@ exports[`<Login /> renders without crashing 1`] = `
                               onClick={[Function]}
                               style={
                                 Object {
+                                  "cursor": "pointer",
                                   "display": "flex",
                                 }
                               }

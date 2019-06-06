@@ -106,10 +106,10 @@ class NavbarComponent extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{ fontFamily: 'Montserrat' }} onClick={() => history.push('/cart')}>Your Bag: </NavLink>
+                <NavLink style={{ fontFamily: 'Montserrat', cursor: 'pointer' }} onClick={() => history.push('/cart')}>Your Bag: </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{ fontFamily: 'Montserrat' }} onClick={() => history.push('/cart')}>$ {cartPrice ? cartPrice : '0.00'} </NavLink>
+                <NavLink style={{ fontFamily: 'Montserrat', cursor: 'pointer' }} onClick={() => history.push('/cart')}>$ {cartPrice ? cartPrice : '0.00'} </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -117,87 +117,29 @@ class NavbarComponent extends Component {
 
         <Navbar style={{ backgroundColor: 'black' }} light expand="md">
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <Collapse isOpen={this.state.isOpen} navbar style={{ justifyContent: 'space-between' }}>
           <Nav navbar>
               <NavItem style={{ display: 'flex', flexDirection: 'row' }}>
                 <NavLink href="/" style={{ color: '#f7436b', fontFamily: 'Montserrat', fontSize: 20 }}>SHOPMATE</NavLink>
               </NavItem>
             </Nav>
-            {history.location.pathname === '/' && <Nav style={{ margin: 'auto' }}>
-              <NavItem>
-                <NavLink
-                  style={{
-                    cursor: 'pointer',
-                    backgroundColor: department === 'reg' ? 'white' : '',
-                    color: department === 'reg' ? 'black' : 'white',
-                    paddingLeft: department === 'reg' ? 15 : '',
-                    paddingRight: department === 'reg' ? 15 : '',
-                    paddingTop: department === 'reg' ? 5 : '',
-                    borderRadius: department === 'reg' ? 5 : '',
-                    fontFamily: 'Montserrat'
-                  }}
-                  onClick={() => setDepartment('reg', '1')}
-                >
-                  Regional
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink style={{
-                  backgroundColor: department === 'nat' ? 'white' : '',
-                  color: department === 'nat' ? 'black' : '#FFF',
-                  paddingLeft: department === 'nat' ? 15 : '',
-                  paddingRight: department === 'nat' ? 15 : '',
-                  paddingTop: department === 'nat' ? 5 : '',
-                  borderRadius: department === 'nat' ? 5 : '',
-                  cursor: 'pointer',
-                  fontFamily: 'Montserrat'
-                  }}
-                  onClick={() => setDepartment('nat', '2')}
-                  >
-                    Nature
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  style={{
-                    backgroundColor: department === 'sea' ? 'white' : '',
-                    color: department === 'sea' ? 'black' : '#FFF',
-                    paddingLeft: department === 'sea' ? 15 : '',
-                    paddingRight: department === 'sea' ? 15 : '',
-                    paddingTop: department === 'sea' ? 5 : '',
-                    borderRadius: department === 'sea' ? 5 : '',
-                    cursor: 'pointer',
-                    fontFamily: 'Montserrat'
-                    }}
-                  onClick={() => setDepartment('sea', '3')}
-                >
-                  Seasonal
-                </NavLink>
-              </NavItem>
-            </Nav>}
-            <Nav className="ml-auto" navbar>
               {history.location.pathname === '/' && <NavItem>
                 <input
                   name="search"
                   id="search"
                   placeholder="&#x1F50D; Search"
                   value={searchTerm}
-                  style={{
-                    marginTop: 5,
-                    borderRadius: 20,
-                    width: 200,
-                    marginRight: 80,
-                    paddingLeft: 20
-                  }}
+                  className="search-bar-style"
                   onChange={(event) => searchProducts(event.target.value)}
                 />
               </NavItem>}
+            <Nav className="" navbar>
               <NavItem>
-                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex' }}>
+                <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex', cursor: 'pointer' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: '#FFF',
                     fontSize: 20,
-                    position: 'absolute'
+                    position: 'absolute',
                     }}>
                     </i>
                     <div style={{

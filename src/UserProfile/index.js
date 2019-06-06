@@ -40,9 +40,9 @@ export class UserProfile extends Component {
       this.setState({ userObj: retrieveUser.data, regions: regionsData.data })
     } catch (error) {
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
       } else {
-        toastManager.add('Unable to fetch user at this moment', { appearance: 'error' })
+        toastManager.add('Unable to fetch user at this moment', { appearance: 'error', autoDismiss: true })
       }
     }
     if (!getCartID) {
@@ -111,13 +111,13 @@ export class UserProfile extends Component {
       const updatedUser = await axios(options);
       localStorage.setItem('userData', JSON.stringify(updatedUser.data))
       this.setState({ userObj: {}, errors: {}, disableButton: false });
-      toastManager.add('Update successful', { appearance: 'success' });
+      toastManager.add('Update successful', { appearance: 'success', autoDismiss: true });
     } catch (error) {
       this.setState({ disableButton: false, errors: {} })
       if (error.response.data.error) {
-        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error' } );
+        toastManager.add(`${error.response.data.error.message}`, { appearance: 'error', autoDismiss: true } );
       } else {
-        toastManager.add('Unable to update your profile at this moment', { appearance: 'error' })
+        toastManager.add('Unable to update your profile at this moment', { appearance: 'error', autoDismiss: true })
       }
     }
   }

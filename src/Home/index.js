@@ -70,7 +70,7 @@ export class HomePage extends React.Component {
       }
       this.fetchProducts(page);
     } catch (error) {
-      toastManager.add('Error occurred', { appearance: 'error' })
+      toastManager.add('Error occurred', { appearance: 'error', autoDismiss: true })
     }
   }
 
@@ -104,7 +104,7 @@ export class HomePage extends React.Component {
     } else if (searchTerm.length > 3) {
       this.setState({ isLoading: true })
       const foundProducts = await searchProducts(searchTerm);
-      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1 })
+      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1, products: [] })
     }
   }
 
@@ -220,7 +220,7 @@ export class HomePage extends React.Component {
               />
             )):
             hasSearched && searchedProducts.length === 0 ? (
-              <div className="no-product-found">
+              <div style={{ marginTop: 100 }} className="no-product-found">
                 <p>No products found</p>
                 <Emojione size={55} text=":disappointed_relieved:" />
               </div>
@@ -230,7 +230,7 @@ export class HomePage extends React.Component {
             ))
           }
         </div>}
-        {!isLoading && <Paginate
+        {!isLoading && (searchedProducts.length > 0 || products.length > 0) && <Paginate
           onPageChange={this.handlePageClick}
           previousLabel="<"
           nextLabel=">"

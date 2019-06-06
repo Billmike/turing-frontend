@@ -1,10 +1,22 @@
 .pagination-class {
   display: flex;
   list-style: none;
-  color: midnightblue;
+  color: #f7436b;
   justify-content: center;
   cursor: pointer;
   border-radius: 3px;
+}
+
+.page-item.active .page-link {
+  color: #FFF !important;
+  background-color: #f7436b !important;
+  border-color: #f7436b !important;
+  outline: none !important;
+}
+
+.page-link {
+  color: #f7436b !important;
+  outline: none !important;
 }
 
 .page-numbers-style {
@@ -33,7 +45,6 @@
 }
 
 .active {
-  background-color: white;
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 5px;

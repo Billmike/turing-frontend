@@ -19,6 +19,7 @@
   height: 40px;
   cursor: pointer;
   font-family: 'Montserrat';
+  outline: none !important;
 }
 
 .cart-checkout-button-disabled {
@@ -66,6 +67,8 @@
   border-color: #FFF;
   box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
   font-family: 'Montserrat';
+  outline: none !important;
+  color: #f7436b;
 }
 
 .product-in-cart-wrapper {
@@ -91,6 +94,7 @@
     box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
     margin-top: 15px;
     font-family: 'Montserrat';
+    outline: none !important;
   }
 }
 

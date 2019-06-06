@@ -44,9 +44,11 @@
   border-color: #f7436b;
   box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2);
   align-self: center;
+  outline: none !important;
 
   &:disabled {
     background-color: gray;
+    border-color: gray;
     cursor: not-allowed;
   }
 }
