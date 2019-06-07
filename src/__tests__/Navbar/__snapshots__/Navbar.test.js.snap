@@ -117,6 +117,11 @@ exports[`<Navbar /> renders without crashing 1`] = `
         vertical={false}
       >
         <NavItem
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
           tag="li"
         >
           <NavLink
@@ -148,9 +153,9 @@ exports[`<Navbar /> renders without crashing 1`] = `
                   "height": 20,
                   "marginLeft": 10,
                   "marginTop": -10,
+                  "position": "absolute",
                   "textAlign": "center",
                   "width": 20,
-                  "zIndex": 1,
                 }
               }
             >
@@ -279,6 +284,11 @@ exports[`<Navbar /> renders without crashing 1`] = `
         vertical={false}
       >
         <NavItem
+          style={
+            Object {
+              "marginRight": 20,
+            }
+          }
           tag="li"
         >
           <NavLink
@@ -310,9 +320,9 @@ exports[`<Navbar /> renders without crashing 1`] = `
                   "height": 20,
                   "marginLeft": 10,
                   "marginTop": -10,
+                  "position": "absolute",
                   "textAlign": "center",
                   "width": 20,
-                  "zIndex": 1,
                 }
               }
             >

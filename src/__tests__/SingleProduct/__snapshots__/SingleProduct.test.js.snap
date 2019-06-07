@@ -228,10 +228,20 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
                       className="ml-auto navbar-nav"
                     >
                       <NavItem
+                        style={
+                          Object {
+                            "marginRight": 20,
+                          }
+                        }
                         tag="li"
                       >
                         <li
                           className="nav-item"
+                          style={
+                            Object {
+                              "marginRight": 20,
+                            }
+                          }
                         >
                           <NavLink
                             onClick={[Function]}
@@ -272,9 +282,9 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
                                     "height": 20,
                                     "marginLeft": 10,
                                     "marginTop": -10,
+                                    "position": "absolute",
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 1,
                                   }
                                 }
                               >
@@ -510,10 +520,20 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
                       className="navbar-nav"
                     >
                       <NavItem
+                        style={
+                          Object {
+                            "marginRight": 20,
+                          }
+                        }
                         tag="li"
                       >
                         <li
                           className="nav-item"
+                          style={
+                            Object {
+                              "marginRight": 20,
+                            }
+                          }
                         >
                           <NavLink
                             onClick={[Function]}
@@ -554,9 +574,9 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
                                     "height": 20,
                                     "marginLeft": 10,
                                     "marginTop": -10,
+                                    "position": "absolute",
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 1,
                                   }
                                 }
                               >
@@ -699,7 +719,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               >
                 <defs>
                   <linearGradient
-                    id="starGrad895605088824662"
+                    id="starGrad213780291682552"
                     x1="0%"
                     x2="100%"
                     y1="0%"
@@ -750,7 +770,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               </svg>
               <Star
                 changeRating={null}
-                fillId="starGrad895605088824662"
+                fillId="starGrad213780291682552"
                 gradientPathName=""
                 hoverMode={false}
                 hoverOverStar={null}
@@ -814,7 +834,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               </Star>
               <Star
                 changeRating={null}
-                fillId="starGrad895605088824662"
+                fillId="starGrad213780291682552"
                 gradientPathName=""
                 hoverMode={false}
                 hoverOverStar={null}
@@ -878,7 +898,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               </Star>
               <Star
                 changeRating={null}
-                fillId="starGrad895605088824662"
+                fillId="starGrad213780291682552"
                 gradientPathName=""
                 hoverMode={false}
                 hoverOverStar={null}
@@ -942,7 +962,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               </Star>
               <Star
                 changeRating={null}
-                fillId="starGrad895605088824662"
+                fillId="starGrad213780291682552"
                 gradientPathName=""
                 hoverMode={false}
                 hoverOverStar={null}
@@ -1006,7 +1026,7 @@ exports[`<SingleProduct /> renders without crashing 1`] = `
               </Star>
               <Star
                 changeRating={null}
-                fillId="starGrad895605088824662"
+                fillId="starGrad213780291682552"
                 gradientPathName=""
                 hoverMode={false}
                 hoverOverStar={null}

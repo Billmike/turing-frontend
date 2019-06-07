@@ -169,7 +169,7 @@ export class Checkout extends Component {
           <h5 className="billing-text">Billing Details</h5>
           <Form>
           <FormGroup>
-            <Label for="exampleEmail">Address 1</Label>
+            <Label for="exampleEmail">Address 1 <span className="required-field-style">*</span></Label>
             <Input
               value={address_1 || ""}
               type="text"
@@ -191,7 +191,7 @@ export class Checkout extends Component {
               />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">City</Label>
+            <Label for="examplePassword">City <span className="required-field-style">*</span></Label>
             <Input
               value={city || ""}
               type="text"
@@ -202,7 +202,7 @@ export class Checkout extends Component {
               />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleSelect">Region</Label>
+            <Label for="exampleSelect">Region <span className="required-field-style">*</span></Label>
             <Input
               type="select"
               name="region"
@@ -219,18 +219,19 @@ export class Checkout extends Component {
             </Input>
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Postal Code</Label>
+            <Label for="examplePassword">Postal Code <span className="required-field-style">*</span></Label>
             <Input
               value={postal_code || ""}
               type="text" name="postal_code" id="postal_code" placeholder="Postal Code" onChange={this.updateUserValue} />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Country</Label>
+            <Label for="examplePassword">Country <span className="required-field-style">*</span></Label>
             <Input
               value={country || ""}
               type="text" name="country" id="country" placeholder="Country" onChange={this.updateUserValue} />
           </FormGroup>
           </Form>
+          <p style={{ fontSize: 14, color: 'gray' }}><span className="required-field-style">*</span> Required Fields</p>
           <div onClick={() => this.placeOrder()} className={payWithCardButtonDisabled ? "stripe-checkout-button-disabled" : ""}>
             <StripeCheckout
               token={this.getToken}

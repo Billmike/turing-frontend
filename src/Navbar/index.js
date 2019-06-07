@@ -82,7 +82,7 @@ class NavbarComponent extends Component {
               </UncontrolledDropdown>}
             </Nav>
             <Nav className="ml-auto" navbar>
-              <NavItem>
+              <NavItem style={{ marginRight: 20 }}>
                 <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex', cursor: 'pointer' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: 'black',
@@ -92,7 +92,7 @@ class NavbarComponent extends Component {
                     </i>
                     <div style={{
                         marginTop: -10,
-                        zIndex: 1,
+                        position: 'absolute',
                         backgroundColor: '#f7436b',
                         height: 20,
                         width: 20,
@@ -134,7 +134,7 @@ class NavbarComponent extends Component {
                 />
               </NavItem>}
             <Nav className="" navbar>
-              <NavItem>
+              <NavItem style={{ marginRight: 20 }}>
                 <NavLink onClick={() => history.push('/cart')} style={{ display: 'flex', cursor: 'pointer' }}>
                   <i className="fas fa-shopping-bag" style={{
                     color: '#FFF',
@@ -144,7 +144,7 @@ class NavbarComponent extends Component {
                     </i>
                     <div style={{
                         marginTop: -10,
-                        zIndex: 1,
+                        position: 'absolute',
                         backgroundColor: '#f7436b',
                         height: 20,
                         width: 20,

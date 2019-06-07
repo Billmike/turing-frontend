@@ -228,10 +228,20 @@ exports[`<Signup /> renders without crashing 1`] = `
                       className="ml-auto navbar-nav"
                     >
                       <NavItem
+                        style={
+                          Object {
+                            "marginRight": 20,
+                          }
+                        }
                         tag="li"
                       >
                         <li
                           className="nav-item"
+                          style={
+                            Object {
+                              "marginRight": 20,
+                            }
+                          }
                         >
                           <NavLink
                             onClick={[Function]}
@@ -272,9 +282,9 @@ exports[`<Signup /> renders without crashing 1`] = `
                                     "height": 20,
                                     "marginLeft": 10,
                                     "marginTop": -10,
+                                    "position": "absolute",
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 1,
                                   }
                                 }
                               >
@@ -510,10 +520,20 @@ exports[`<Signup /> renders without crashing 1`] = `
                       className="navbar-nav"
                     >
                       <NavItem
+                        style={
+                          Object {
+                            "marginRight": 20,
+                          }
+                        }
                         tag="li"
                       >
                         <li
                           className="nav-item"
+                          style={
+                            Object {
+                              "marginRight": 20,
+                            }
+                          }
                         >
                           <NavLink
                             onClick={[Function]}
@@ -554,9 +574,9 @@ exports[`<Signup /> renders without crashing 1`] = `
                                     "height": 20,
                                     "marginLeft": 10,
                                     "marginTop": -10,
+                                    "position": "absolute",
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 1,
                                   }
                                 }
                               >
