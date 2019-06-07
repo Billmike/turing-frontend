@@ -72,21 +72,43 @@ export class Checkout extends Component {
 
   getToken = async(token) => {
     const getCartID = await localStorage.getItem('cartId');
+    const accessToken = await localStorage.getItem('user');
+    const parsedAccessToken = JSON.parse(accessToken);
     const { history, toastManager } = this.props;
-    const { orderId, total_price } = this.state;
+    const { total_price, userObj: { shipping_region_id, address_1, address_2 } } = this.state;
+
+    const dataForOrderID = { cart_id: getCartID, shipping_id: shipping_region_id, tax_id: 2 };
     const approximateAmount = Math.round(Number(total_price));
-    const data = {
-      stripeToken: token.id,
-      order_id: orderId,
-      amount: approximateAmount,
-      description: 'An order from Shopmate ventures'
-    }
 
     try {
-      const url = 'https://backendapi.turing.com/stripe/charge';
+      const urlForOrderID = 'https://backendapi.turing.com/orders';
+      const urlToChargeStripe = 'https://backendapi.turing.com/stripe/charge';
+
+      const optionsForOrderID = {
+        url: urlForOrderID,
+        data: dataForOrderID,
+        method: 'POST',
+        headers: {
+          'USER-KEY': `${parsedAccessToken.accessToken}`,
+          'Content-Type': 'application/json'
+        }
+      }
+      const fullAddress = address_2 ? `${address_1} ${address_2}` : `${address_1}`;
+
+      const postOrder = await axios(optionsForOrderID);
+      await localStorage.setItem('orderId', JSON.stringify(postOrder.data.orderId));
+      await localStorage.setItem('address', fullAddress);
+
+      const dataForStripe = {
+        stripeToken: token.id,
+        order_id: postOrder.data.orderId,
+        amount: approximateAmount,
+        description: 'An order from Shopmate ventures'
+      }
+
       const options = {
-        url,
-        data,
+        url: urlToChargeStripe,
+        data: dataForStripe,
         method: 'POST'
       };
       await axios(options);
@@ -95,34 +117,6 @@ export class Checkout extends Component {
       this.setState({ productIncart: cartItem.data, total_price: totalPrice.data.total_price });
       history.push('/confirm');
       toastManager.add('Order created successfully', { appearance: 'success', autoDismiss: true });
-    } catch (error) {
-      toastManager.add('An error occurred.', { appearance: 'error', autoDismiss: true });
-    }
-  }
-
-  placeOrder = async() => {
-    const getCartID = await localStorage.getItem('cartId');
-    const accessToken = await localStorage.getItem('user');
-    const parsedAccessToken = JSON.parse(accessToken);
-    const { userObj: { shipping_region_id, address_1, address_2 }, total_price } = this.state;
-    const { toastManager } = this.props;
-    const data = { cart_id: getCartID, shipping_id: shipping_region_id, tax_id: 2 };
-    try {
-      const url = 'https://backendapi.turing.com/orders';
-      const options = {
-        method: 'POST',
-        data,
-        url,
-        headers: {
-          'USER-KEY': `${parsedAccessToken.accessToken}`,
-          'Content-type': 'application/json'
-        }
-      }
-      const fullAddress = address_2 ? `${address_1} ${address_2}` : `${address_1}`;
-      const postOrder = await axios(options);
-      await localStorage.setItem('orderId', JSON.stringify(postOrder.data.orderId));
-      await localStorage.setItem('address', fullAddress);
-      this.setState({ orderId: postOrder.data.orderId });
     } catch (error) {
       toastManager.add('An error occurred.', { appearance: 'error', autoDismiss: true });
     }
@@ -146,9 +140,7 @@ export class Checkout extends Component {
         address_2,
         city,
         country,
-        shipping_region,
         postal_code,
-        region
       } } = this.state;
     const { history } = this.props;
     const stripePrice = Number(total_price) * 100;
@@ -232,7 +224,7 @@ export class Checkout extends Component {
           </FormGroup>
           </Form>
           <p style={{ fontSize: 14, color: 'gray' }}><span className="required-field-style">*</span> Required Fields</p>
-          <div onClick={() => this.placeOrder()} className={payWithCardButtonDisabled ? "stripe-checkout-button-disabled" : ""}>
+          <div className={payWithCardButtonDisabled ? "stripe-checkout-button-disabled" : ""}>
             <StripeCheckout
               token={this.getToken}
               stripeKey="pk_test_NcwpaplBCuTL6I0THD44heRe"
