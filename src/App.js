@@ -5,7 +5,7 @@ import SingleProduct from './SingleProduct';
 import Signup from './Signup';
 import Login from './Login';
 import Cart from './Cart';
-import EditProfile from './EditProfile';
+import EditProfile from './EditProfile/index';
 import Checkout from './Checkout';
 import RequireAuth from './utils/RequireAuth';
 import OrderConfirmation from './OrderConfirmation';
