@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart /> should mount without crashing 1`] = `
+<Cart
+  history={
+    Object {
+      "location": Object {
+        "pathname": "",
+      },
+    }
+  }
+>
+  <Spinner>
+    <div
+      className="spinner"
+    />
+  </Spinner>
+</Cart>
+`;

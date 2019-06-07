@@ -1,0 +1,927 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserProfile /> renders without crashing 1`] = `
+<EditProfile
+  history={
+    Object {
+      "location": Object {
+        "pathname": "",
+      },
+    }
+  }
+>
+  <div>
+    <NavbarComponent
+      cartPrice=""
+      history={
+        Object {
+          "location": Object {
+            "pathname": "",
+          },
+        }
+      }
+      productIncart={Array []}
+    >
+      <div>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={Object {}}
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <p
+                        style={
+                          Object {
+                            "fontFamily": "Montserrat",
+                            "marginLeft": 20,
+                            "marginTop": 8,
+                          }
+                        }
+                      >
+                        Hi
+                      </p>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Sign in
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <p
+                            style={
+                              Object {
+                                "fontFamily": "Montserrat",
+                                "marginTop": 8,
+                              }
+                            }
+                          >
+                            Or
+                          </p>
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Register
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className="ml-auto"
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="ml-auto navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "black",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              Your Bag: 
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              $ 
+                              0.00
+                               
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "black",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "black",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              style={
+                Object {
+                  "justifyContent": "space-between",
+                }
+              }
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={
+                    Object {
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            href="/"
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "fontFamily": "Montserrat",
+                                "fontSize": 20,
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              href="/"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 20,
+                                }
+                              }
+                            >
+                              SHOPMATE
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className=""
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "#FFF",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+      </div>
+    </NavbarComponent>
+    <Form
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "margin": "auto",
+          "marginTop": 30,
+          "width": "30%",
+        }
+      }
+      tag="form"
+    >
+      <form
+        className=""
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "margin": "auto",
+            "marginTop": 30,
+            "width": "30%",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "fontSize": 20,
+              "fontWeight": "600",
+              "textAlign": "center",
+            }
+          }
+        >
+          User Profile
+        </p>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="exampleEmail"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="exampleEmail"
+              >
+                Address 1
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="address_1"
+              name="address_1"
+              onChange={[Function]}
+              placeholder="Address 1"
+              type="text"
+              value=""
+            >
+              <input
+                className="form-control"
+                id="address_1"
+                name="address_1"
+                onChange={[Function]}
+                placeholder="Address 1"
+                type="text"
+                value=""
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="examplePassword"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="examplePassword"
+              >
+                Address 2
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="address_2"
+              name="address_2"
+              onChange={[Function]}
+              placeholder="Address 2"
+              type="text"
+              value=""
+            >
+              <input
+                className="form-control"
+                id="address_2"
+                name="address_2"
+                onChange={[Function]}
+                placeholder="Address 2"
+                type="text"
+                value=""
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="examplePassword"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="examplePassword"
+              >
+                City
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="city"
+              name="city"
+              onChange={[Function]}
+              placeholder="City"
+              type="text"
+              value=""
+            >
+              <input
+                className="form-control"
+                id="city"
+                name="city"
+                onChange={[Function]}
+                placeholder="City"
+                type="text"
+                value=""
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="exampleSelect"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="exampleSelect"
+              >
+                Region
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="region"
+              name="region"
+              onChange={[Function]}
+              type="select"
+            >
+              <select
+                className="form-control"
+                id="region"
+                name="region"
+                onChange={[Function]}
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="examplePassword"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="examplePassword"
+              >
+                Postal Code
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="postal_code"
+              name="postal_code"
+              onChange={[Function]}
+              placeholder="Postal Code"
+              type="text"
+              value=""
+            >
+              <input
+                className="form-control"
+                id="postal_code"
+                name="postal_code"
+                onChange={[Function]}
+                placeholder="Postal Code"
+                type="text"
+                value=""
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <FormGroup
+          tag="div"
+        >
+          <div
+            className="form-group"
+          >
+            <Label
+              className="label-style"
+              for="examplePassword"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              <label
+                className="label-style"
+                htmlFor="examplePassword"
+              >
+                Country
+              </label>
+            </Label>
+            <Input
+              className=""
+              id="country"
+              name="country"
+              onChange={[Function]}
+              placeholder="Country"
+              type="text"
+              value=""
+            >
+              <input
+                className="form-control"
+                id="country"
+                name="country"
+                onChange={[Function]}
+                placeholder="Country"
+                type="text"
+                value=""
+              />
+            </Input>
+          </div>
+        </FormGroup>
+        <Button
+          className="update-profile-submit-button"
+          color="secondary"
+          disabled={false}
+          onClick={[Function]}
+          tag="button"
+        >
+          <button
+            aria-label={null}
+            className="update-profile-submit-button btn btn-secondary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            Update Profile
+          </button>
+        </Button>
+      </form>
+    </Form>
+  </div>
+</EditProfile>
+`;

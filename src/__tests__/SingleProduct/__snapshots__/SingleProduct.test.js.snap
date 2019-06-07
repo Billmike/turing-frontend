@@ -1,0 +1,1462 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleProduct /> renders without crashing 1`] = `
+<SingleProduct
+  history={
+    Object {
+      "location": Object {
+        "pathname": "",
+      },
+    }
+  }
+>
+  <div>
+    <NavbarComponent
+      cartPrice="0.00"
+      history={
+        Object {
+          "location": Object {
+            "pathname": "",
+          },
+        }
+      }
+      productIncart={Array []}
+    >
+      <div>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={Object {}}
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <p
+                        style={
+                          Object {
+                            "fontFamily": "Montserrat",
+                            "marginLeft": 20,
+                            "marginTop": 8,
+                          }
+                        }
+                      >
+                        Hi
+                      </p>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Sign in
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <p
+                            style={
+                              Object {
+                                "fontFamily": "Montserrat",
+                                "marginTop": 8,
+                              }
+                            }
+                          >
+                            Or
+                          </p>
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Register
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className="ml-auto"
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="ml-auto navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "black",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              Your Bag: 
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              $ 
+                              0.00
+                               
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "black",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "black",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              style={
+                Object {
+                  "justifyContent": "space-between",
+                }
+              }
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={
+                    Object {
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            href="/"
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "fontFamily": "Montserrat",
+                                "fontSize": 20,
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              href="/"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 20,
+                                }
+                              }
+                            >
+                              SHOPMATE
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className=""
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "#FFF",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+      </div>
+    </NavbarComponent>
+    <div
+      className="single-products-container"
+    >
+      <div
+        className="image-wrapper-container"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "justifyContent": "space-around",
+              "marginTop": 30,
+            }
+          }
+        />
+      </div>
+      <div
+        className="single-product-detail"
+      >
+        <span
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontFamily": "Montserrat",
+            }
+          }
+        >
+          Home
+        </span>
+        <span
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontSize": 7,
+              "marginLeft": 5,
+              "marginRight": 5,
+            }
+          }
+        >
+          ♦
+        </span>
+        <span
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontFamily": "Montserrat",
+            }
+          }
+        >
+          All categories
+        </span>
+        <span
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontSize": 7,
+              "marginLeft": 5,
+              "marginRight": 5,
+            }
+          }
+        >
+          ♦
+        </span>
+        <span
+          style={
+            Object {
+              "color": "#A9A9A9",
+              "fontFamily": "Montserrat",
+            }
+          }
+        >
+          Men's Clothing & Accessories
+        </span>
+        <div>
+          <StarRatings
+            changeRating={null}
+            gradientPathName=""
+            ignoreInlineStyles={false}
+            numberOfStars={5}
+            rating={0}
+            starDimension="25px"
+            starEmptyColor="rgb(203, 211, 227)"
+            starHoverColor="rgb(230, 67, 47)"
+            starRatedColor="#FFA500"
+            starSpacing="5px"
+            svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+            svgIconViewBox="0 0 51 48"
+            typeOfWidget="Star"
+          >
+            <div
+              className="star-ratings"
+              style={
+                Object {
+                  "boxSizing": "border-box",
+                  "display": "inline-block",
+                  "position": "relative",
+                }
+              }
+              title="0 Stars"
+            >
+              <svg
+                className="star-grad"
+                style={
+                  Object {
+                    "height": "0",
+                    "position": "absolute",
+                    "visibility": "hidden",
+                    "width": "0",
+                    "zIndex": "0",
+                  }
+                }
+              >
+                <defs>
+                  <linearGradient
+                    id="starGrad916180018988069"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="0%"
+                  >
+                    <stop
+                      className="stop-color-first"
+                      offset="0%"
+                      style={
+                        Object {
+                          "stopColor": "#FFA500",
+                          "stopOpacity": "1",
+                        }
+                      }
+                    />
+                    <stop
+                      className="stop-color-first"
+                      offset="0%"
+                      style={
+                        Object {
+                          "stopColor": "#FFA500",
+                          "stopOpacity": "1",
+                        }
+                      }
+                    />
+                    <stop
+                      className="stop-color-final"
+                      offset="0%"
+                      style={
+                        Object {
+                          "stopColor": "rgb(203, 211, 227)",
+                          "stopOpacity": "1",
+                        }
+                      }
+                    />
+                    <stop
+                      className="stop-color-final"
+                      offset="100%"
+                      style={
+                        Object {
+                          "stopColor": "rgb(203, 211, 227)",
+                          "stopOpacity": "1",
+                        }
+                      }
+                    />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <Star
+                changeRating={null}
+                fillId="starGrad916180018988069"
+                gradientPathName=""
+                hoverMode={false}
+                hoverOverStar={null}
+                ignoreInlineStyles={false}
+                isCurrentHoveredStar={false}
+                isFirstStar={true}
+                isHovered={false}
+                isLastStar={false}
+                isPartiallyFullStar={false}
+                isStarred={false}
+                key="1"
+                starDimension="25px"
+                starEmptyColor="rgb(203, 211, 227)"
+                starHoverColor="rgb(230, 67, 47)"
+                starRatedColor="#FFA500"
+                starSpacing="5px"
+                svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                svgIconViewBox="0 0 51 48"
+                unHoverOverStar={null}
+              >
+                <div
+                  className="star-container"
+                  onClick={null}
+                  onMouseEnter={null}
+                  onMouseLeave={null}
+                  style={
+                    Object {
+                      "cursor": undefined,
+                      "display": "inline-block",
+                      "paddingLeft": undefined,
+                      "paddingRight": "5px",
+                      "position": "relative",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  <svg
+                    className="widget-svg"
+                    style={
+                      Object {
+                        "height": "25px",
+                        "transform": undefined,
+                        "transition": "transform .2s ease-in-out",
+                        "width": "25px",
+                      }
+                    }
+                    viewBox="0 0 51 48"
+                  >
+                    <path
+                      className="star"
+                      d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                      style={
+                        Object {
+                          "fill": "rgb(203, 211, 227)",
+                          "transition": "fill .2s ease-in-out",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </Star>
+              <Star
+                changeRating={null}
+                fillId="starGrad916180018988069"
+                gradientPathName=""
+                hoverMode={false}
+                hoverOverStar={null}
+                ignoreInlineStyles={false}
+                isCurrentHoveredStar={false}
+                isFirstStar={false}
+                isHovered={false}
+                isLastStar={false}
+                isPartiallyFullStar={false}
+                isStarred={false}
+                key="2"
+                starDimension="25px"
+                starEmptyColor="rgb(203, 211, 227)"
+                starHoverColor="rgb(230, 67, 47)"
+                starRatedColor="#FFA500"
+                starSpacing="5px"
+                svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                svgIconViewBox="0 0 51 48"
+                unHoverOverStar={null}
+              >
+                <div
+                  className="star-container"
+                  onClick={null}
+                  onMouseEnter={null}
+                  onMouseLeave={null}
+                  style={
+                    Object {
+                      "cursor": undefined,
+                      "display": "inline-block",
+                      "paddingLeft": "5px",
+                      "paddingRight": "5px",
+                      "position": "relative",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  <svg
+                    className="widget-svg"
+                    style={
+                      Object {
+                        "height": "25px",
+                        "transform": undefined,
+                        "transition": "transform .2s ease-in-out",
+                        "width": "25px",
+                      }
+                    }
+                    viewBox="0 0 51 48"
+                  >
+                    <path
+                      className="star"
+                      d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                      style={
+                        Object {
+                          "fill": "rgb(203, 211, 227)",
+                          "transition": "fill .2s ease-in-out",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </Star>
+              <Star
+                changeRating={null}
+                fillId="starGrad916180018988069"
+                gradientPathName=""
+                hoverMode={false}
+                hoverOverStar={null}
+                ignoreInlineStyles={false}
+                isCurrentHoveredStar={false}
+                isFirstStar={false}
+                isHovered={false}
+                isLastStar={false}
+                isPartiallyFullStar={false}
+                isStarred={false}
+                key="3"
+                starDimension="25px"
+                starEmptyColor="rgb(203, 211, 227)"
+                starHoverColor="rgb(230, 67, 47)"
+                starRatedColor="#FFA500"
+                starSpacing="5px"
+                svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                svgIconViewBox="0 0 51 48"
+                unHoverOverStar={null}
+              >
+                <div
+                  className="star-container"
+                  onClick={null}
+                  onMouseEnter={null}
+                  onMouseLeave={null}
+                  style={
+                    Object {
+                      "cursor": undefined,
+                      "display": "inline-block",
+                      "paddingLeft": "5px",
+                      "paddingRight": "5px",
+                      "position": "relative",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  <svg
+                    className="widget-svg"
+                    style={
+                      Object {
+                        "height": "25px",
+                        "transform": undefined,
+                        "transition": "transform .2s ease-in-out",
+                        "width": "25px",
+                      }
+                    }
+                    viewBox="0 0 51 48"
+                  >
+                    <path
+                      className="star"
+                      d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                      style={
+                        Object {
+                          "fill": "rgb(203, 211, 227)",
+                          "transition": "fill .2s ease-in-out",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </Star>
+              <Star
+                changeRating={null}
+                fillId="starGrad916180018988069"
+                gradientPathName=""
+                hoverMode={false}
+                hoverOverStar={null}
+                ignoreInlineStyles={false}
+                isCurrentHoveredStar={false}
+                isFirstStar={false}
+                isHovered={false}
+                isLastStar={false}
+                isPartiallyFullStar={false}
+                isStarred={false}
+                key="4"
+                starDimension="25px"
+                starEmptyColor="rgb(203, 211, 227)"
+                starHoverColor="rgb(230, 67, 47)"
+                starRatedColor="#FFA500"
+                starSpacing="5px"
+                svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                svgIconViewBox="0 0 51 48"
+                unHoverOverStar={null}
+              >
+                <div
+                  className="star-container"
+                  onClick={null}
+                  onMouseEnter={null}
+                  onMouseLeave={null}
+                  style={
+                    Object {
+                      "cursor": undefined,
+                      "display": "inline-block",
+                      "paddingLeft": "5px",
+                      "paddingRight": "5px",
+                      "position": "relative",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  <svg
+                    className="widget-svg"
+                    style={
+                      Object {
+                        "height": "25px",
+                        "transform": undefined,
+                        "transition": "transform .2s ease-in-out",
+                        "width": "25px",
+                      }
+                    }
+                    viewBox="0 0 51 48"
+                  >
+                    <path
+                      className="star"
+                      d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                      style={
+                        Object {
+                          "fill": "rgb(203, 211, 227)",
+                          "transition": "fill .2s ease-in-out",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </Star>
+              <Star
+                changeRating={null}
+                fillId="starGrad916180018988069"
+                gradientPathName=""
+                hoverMode={false}
+                hoverOverStar={null}
+                ignoreInlineStyles={false}
+                isCurrentHoveredStar={false}
+                isFirstStar={false}
+                isHovered={false}
+                isLastStar={true}
+                isPartiallyFullStar={false}
+                isStarred={false}
+                key="5"
+                starDimension="25px"
+                starEmptyColor="rgb(203, 211, 227)"
+                starHoverColor="rgb(230, 67, 47)"
+                starRatedColor="#FFA500"
+                starSpacing="5px"
+                svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                svgIconViewBox="0 0 51 48"
+                unHoverOverStar={null}
+              >
+                <div
+                  className="star-container"
+                  onClick={null}
+                  onMouseEnter={null}
+                  onMouseLeave={null}
+                  style={
+                    Object {
+                      "cursor": undefined,
+                      "display": "inline-block",
+                      "paddingLeft": "5px",
+                      "paddingRight": undefined,
+                      "position": "relative",
+                      "verticalAlign": "middle",
+                    }
+                  }
+                >
+                  <svg
+                    className="widget-svg"
+                    style={
+                      Object {
+                        "height": "25px",
+                        "transform": undefined,
+                        "transition": "transform .2s ease-in-out",
+                        "width": "25px",
+                      }
+                    }
+                    viewBox="0 0 51 48"
+                  >
+                    <path
+                      className="star"
+                      d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+                      style={
+                        Object {
+                          "fill": "rgb(203, 211, 227)",
+                          "transition": "fill .2s ease-in-out",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </Star>
+            </div>
+          </StarRatings>
+        </div>
+        <p
+          style={
+            Object {
+              "fontFamily": "Montserrat",
+              "fontWeight": "bold",
+              "marginTop": 10,
+            }
+          }
+        />
+        <p
+          style={
+            Object {
+              "color": "red",
+              "fontFamily": "Montserrat",
+              "fontWeight": "bold",
+            }
+          }
+        >
+          $
+        </p>
+        <div>
+          <p
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+              }
+            }
+          >
+            Color
+          </p>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              className="color-choice"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "red",
+                  "boxShadow": "",
+                }
+              }
+            />
+            <div
+              className="color-choice"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "blue",
+                  "boxShadow": "",
+                  "marginLeft": 15,
+                }
+              }
+            />
+            <div
+              className="color-choice"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "green",
+                  "boxShadow": "",
+                  "marginLeft": 15,
+                }
+              }
+            />
+            <div
+              className="color-choice"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "orange",
+                  "boxShadow": "",
+                  "marginLeft": 15,
+                }
+              }
+            />
+            <div
+              className="color-choice"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "purple",
+                  "boxShadow": "",
+                  "marginLeft": 15,
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginTop": 10,
+            }
+          }
+        >
+          <p
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+              }
+            }
+          >
+            Size
+          </p>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <p
+              className="size-style-left"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#DCDCDC",
+                  "color": "black",
+                }
+              }
+            >
+              S
+            </p>
+            <p
+              className="size-style"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#DCDCDC",
+                  "color": "black",
+                }
+              }
+            >
+              M
+            </p>
+            <p
+              className="size-style"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#DCDCDC",
+                  "color": "black",
+                }
+              }
+            >
+              L
+            </p>
+            <p
+              className="size-style"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#DCDCDC",
+                  "color": "black",
+                }
+              }
+            >
+              XL
+            </p>
+            <p
+              className="size-style"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#DCDCDC",
+                  "color": "black",
+                }
+              }
+            >
+              XXL
+            </p>
+          </div>
+        </div>
+        <div>
+          <p
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+              }
+            }
+          >
+            Quantity
+          </p>
+          <div
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#D3D3D3",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "height": 20,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
+            >
+              <p
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginTop": -3,
+                  }
+                }
+              >
+                -
+              </p>
+            </div>
+            <p
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderColor": "#D3D3D3",
+                  "borderRadius": "50%",
+                  "borderStyle": "solid",
+                  "borderWidth": "thin",
+                  "fontFamily": "Montserrat",
+                  "marginRight": 10,
+                  "marginTop": -3,
+                  "textAlign": "center",
+                  "width": 30,
+                }
+              }
+            >
+              1
+            </p>
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#D3D3D3",
+                  "borderRadius": "50%",
+                  "cursor": "pointer",
+                  "height": 20,
+                  "marginRight": 10,
+                  "textAlign": "center",
+                  "width": 20,
+                }
+              }
+            >
+              <p
+                onClick={[Function]}
+                style={
+                  Object {
+                    "marginTop": -3,
+                  }
+                }
+              >
+                +
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "marginTop": 15,
+            }
+          }
+        >
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#f7436b",
+                "borderColor": "#f7436b",
+                "borderRadius": 20,
+                "boxShadow": "0.5rem 0.5rem 3rem rgba(0,0,0,0.2)",
+                "color": "#FFF",
+                "cursor": "pointer",
+                "fontFamily": "Montserrat",
+                "height": 40,
+                "width": 150,
+              }
+            }
+          >
+            Add to cart
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "marginLeft": "auto",
+                "marginTop": 5,
+              }
+            }
+          >
+            <i
+              className="far fa-heart"
+              style={
+                Object {
+                  "color": "#f7436b",
+                  "cursor": "pointer",
+                  "marginRight": 10,
+                  "marginTop": 5,
+                }
+              }
+            />
+            <p
+              style={
+                Object {
+                  "color": "#A9A9A9",
+                  "fontFamily": "Montserrat",
+                }
+              }
+            >
+              Add to wishlist
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="reviews-container"
+    >
+      <div
+        style={
+          Object {
+            "maxHeight": 400,
+            "overflowY": "scroll",
+          }
+        }
+      >
+        <h5
+          style={
+            Object {
+              "fontFamily": "Montserrat",
+              "marginBottom": 20,
+            }
+          }
+        >
+          Product Reviews
+        </h5>
+      </div>
+      <hr />
+      <p
+        className="not-logged-in"
+      >
+        You need to be logged in to post reviews. 
+        <span
+          className="log-in-link"
+          onClick={[Function]}
+        >
+          Log in now
+        </span>
+      </p>
+      <Modal
+        autoFocus={true}
+        backdrop={true}
+        backdropTransition={
+          Object {
+            "mountOnEnter": true,
+            "timeout": 150,
+          }
+        }
+        centered={false}
+        fade={true}
+        isOpen={false}
+        keyboard={true}
+        modalTransition={
+          Object {
+            "timeout": 300,
+          }
+        }
+        onClosed={[Function]}
+        onOpened={[Function]}
+        returnFocusAfterClose={true}
+        role="dialog"
+        scrollable={false}
+        toggle={[Function]}
+        unmountOnClose={true}
+        zIndex={1050}
+      />
+    </div>
+  </div>
+</SingleProduct>
+`;

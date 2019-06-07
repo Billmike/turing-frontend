@@ -1,0 +1,838 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> renders without crashing 1`] = `
+<HomePage
+  history={
+    Object {
+      "location": Object {
+        "pathname": "",
+      },
+    }
+  }
+>
+  <div>
+    <NavbarComponent
+      cartPrice="0.00"
+      department=""
+      history={
+        Object {
+          "location": Object {
+            "pathname": "",
+          },
+        }
+      }
+      productIncart={Array []}
+      searchProducts={[Function]}
+      searchTerm=""
+      setDepartment={[Function]}
+    >
+      <div>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "#FFF",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "#FFF",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={Object {}}
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <p
+                        style={
+                          Object {
+                            "fontFamily": "Montserrat",
+                            "marginLeft": 20,
+                            "marginTop": 8,
+                          }
+                        }
+                      >
+                        Hi
+                      </p>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Sign in
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <p
+                            style={
+                              Object {
+                                "fontFamily": "Montserrat",
+                                "marginTop": 8,
+                              }
+                            }
+                          >
+                            Or
+                          </p>
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                                "fontWeight": "bold",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                  "fontWeight": "bold",
+                                }
+                              }
+                            >
+                              Register
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className="ml-auto"
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="ml-auto navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "black",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              Your Bag: 
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "fontFamily": "Montserrat",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "fontFamily": "Montserrat",
+                                }
+                              }
+                            >
+                              $ 
+                              0.00
+                               
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+        <Navbar
+          expand="md"
+          light={true}
+          style={
+            Object {
+              "backgroundColor": "black",
+            }
+          }
+          tag="nav"
+        >
+          <nav
+            className="navbar navbar-expand-md navbar-light"
+            style={
+              Object {
+                "backgroundColor": "black",
+              }
+            }
+          >
+            <NavbarToggler
+              onClick={[Function]}
+              tag="button"
+              type="button"
+            >
+              <button
+                className="navbar-toggler"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className="navbar-toggler-icon"
+                />
+              </button>
+            </NavbarToggler>
+            <Collapse
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              isOpen={false}
+              mountOnEnter={false}
+              navbar={true}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              style={
+                Object {
+                  "justifyContent": "space-between",
+                }
+              }
+              tag="div"
+              timeout={350}
+              unmountOnExit={false}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={350}
+                unmountOnExit={false}
+              >
+                <div
+                  className="collapse navbar-collapse"
+                  style={
+                    Object {
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Nav
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        style={
+                          Object {
+                            "display": "flex",
+                            "flexDirection": "row",
+                          }
+                        }
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                          style={
+                            Object {
+                              "display": "flex",
+                              "flexDirection": "row",
+                            }
+                          }
+                        >
+                          <NavLink
+                            href="/"
+                            style={
+                              Object {
+                                "color": "#f7436b",
+                                "fontFamily": "Montserrat",
+                                "fontSize": 20,
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              href="/"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "color": "#f7436b",
+                                  "fontFamily": "Montserrat",
+                                  "fontSize": 20,
+                                }
+                              }
+                            >
+                              SHOPMATE
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                  <Nav
+                    className=""
+                    navbar={true}
+                    tag="ul"
+                    vertical={false}
+                  >
+                    <ul
+                      className="navbar-nav"
+                    >
+                      <NavItem
+                        tag="li"
+                      >
+                        <li
+                          className="nav-item"
+                        >
+                          <NavLink
+                            onClick={[Function]}
+                            style={
+                              Object {
+                                "cursor": "pointer",
+                                "display": "flex",
+                              }
+                            }
+                            tag="a"
+                          >
+                            <a
+                              className="nav-link"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "cursor": "pointer",
+                                  "display": "flex",
+                                }
+                              }
+                            >
+                              <i
+                                className="fas fa-shopping-bag"
+                                style={
+                                  Object {
+                                    "color": "#FFF",
+                                    "fontSize": 20,
+                                    "position": "absolute",
+                                  }
+                                }
+                              />
+                              <div
+                                style={
+                                  Object {
+                                    "backgroundColor": "#f7436b",
+                                    "borderRadius": "50%",
+                                    "color": "#FFF",
+                                    "height": 20,
+                                    "marginLeft": 10,
+                                    "marginTop": -10,
+                                    "textAlign": "center",
+                                    "width": 20,
+                                    "zIndex": 10,
+                                  }
+                                }
+                              >
+                                <p
+                                  style={
+                                    Object {
+                                      "fontFamily": "Montserrat",
+                                      "fontSize": 14,
+                                      "marginTop": 0,
+                                    }
+                                  }
+                                >
+                                  0
+                                </p>
+                              </div>
+                            </a>
+                          </NavLink>
+                        </li>
+                      </NavItem>
+                    </ul>
+                  </Nav>
+                </div>
+              </Transition>
+            </Collapse>
+          </nav>
+        </Navbar>
+      </div>
+    </NavbarComponent>
+    <Carousel
+      activeIndex={0}
+      interval={5000}
+      keyboard={true}
+      next={[Function]}
+      pause="hover"
+      previous={[Function]}
+      slide={true}
+    >
+      <div
+        className="carousel slide"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <CarouselIndicators
+          activeIndex={0}
+          items={
+            Array [
+              Object {
+                "altText": "Slide 1",
+                "caption": "Slide 1",
+                "src": "bags.jpg",
+              },
+              Object {
+                "altText": "Slide 1",
+                "caption": "Slide 1",
+                "src": "lines.jpg",
+              },
+              Object {
+                "altText": "Slide 1",
+                "caption": "Slide 1",
+                "src": "dooley.jpg",
+              },
+            ]
+          }
+          onClickHandler={[Function]}
+        >
+          <ol
+            className="carousel-indicators"
+          >
+            <li
+              className="active"
+              key="bags.jpgSlide 1Slide 1"
+              onClick={[Function]}
+            />
+            <li
+              className=""
+              key="lines.jpgSlide 1Slide 1"
+              onClick={[Function]}
+            />
+            <li
+              className=""
+              key="dooley.jpgSlide 1Slide 1"
+              onClick={[Function]}
+            />
+          </ol>
+        </CarouselIndicators>
+        <div
+          className="carousel-inner"
+        >
+          <CarouselItem
+            appear={false}
+            enter={true}
+            exit={true}
+            in={true}
+            key="bags.jpg"
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            slide={true}
+            tag="div"
+            timeout={600}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={false}
+              enter={true}
+              exit={true}
+              in={true}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={600}
+              unmountOnExit={false}
+            >
+              <div
+                className="carousel-item active"
+              >
+                <img
+                  alt="Slide 1"
+                  className="carousel-style-class"
+                  src="bags.jpg"
+                />
+              </div>
+            </Transition>
+          </CarouselItem>
+          <CarouselItem
+            appear={false}
+            enter={true}
+            exit={true}
+            in={false}
+            key="lines.jpg"
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            slide={true}
+            tag="div"
+            timeout={600}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={600}
+              unmountOnExit={false}
+            >
+              <div
+                className="carousel-item"
+              >
+                <img
+                  alt="Slide 1"
+                  className="carousel-style-class"
+                  src="lines.jpg"
+                />
+              </div>
+            </Transition>
+          </CarouselItem>
+          <CarouselItem
+            appear={false}
+            enter={true}
+            exit={true}
+            in={false}
+            key="dooley.jpg"
+            mountOnEnter={false}
+            onEnter={[Function]}
+            onEntered={[Function]}
+            onEntering={[Function]}
+            onExit={[Function]}
+            onExited={[Function]}
+            onExiting={[Function]}
+            slide={true}
+            tag="div"
+            timeout={600}
+            unmountOnExit={false}
+          >
+            <Transition
+              appear={false}
+              enter={true}
+              exit={true}
+              in={false}
+              mountOnEnter={false}
+              onEnter={[Function]}
+              onEntered={[Function]}
+              onEntering={[Function]}
+              onExit={[Function]}
+              onExited={[Function]}
+              onExiting={[Function]}
+              timeout={600}
+              unmountOnExit={false}
+            >
+              <div
+                className="carousel-item"
+              >
+                <img
+                  alt="Slide 1"
+                  className="carousel-style-class"
+                  src="dooley.jpg"
+                />
+              </div>
+            </Transition>
+          </CarouselItem>
+        </div>
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={[Function]}
+        >
+          <a
+            className="carousel-control-prev"
+            onClick={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              aria-hidden="true"
+              className="carousel-control-prev-icon"
+            />
+            <span
+              className="sr-only"
+            >
+              Previous
+            </span>
+          </a>
+        </CarouselControl>
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={[Function]}
+        >
+          <a
+            className="carousel-control-next"
+            onClick={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <span
+              aria-hidden="true"
+              className="carousel-control-next-icon"
+            />
+            <span
+              className="sr-only"
+            >
+              Next
+            </span>
+          </a>
+        </CarouselControl>
+      </div>
+    </Carousel>
+    <Spinner>
+      <div
+        className="spinner"
+      />
+    </Spinner>
+  </div>
+</HomePage>
+`;

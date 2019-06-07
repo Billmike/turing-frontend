@@ -1,0 +1,31 @@
+.label-style {
+  font-family: 'Montserrat';
+}
+
+.update-profile-submit-button {
+  background-color: #F7436B !important;
+  border-radius: 30px !important;
+  border-color: #FFF !important;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2) !important;
+  font-family: 'Montserrat';
+  outline: none !important;
+}
+
+.update-profile-submit-button-disabled {
+  background-color: gray !important;
+  border-radius: 30px !important;
+  border-color: gray !important;
+  box-shadow: 0.5rem 0.5rem 3rem rgba(0,0,0,0.2) !important;
+  font-family: 'Montserrat';
+  cursor: not-allowed;
+  outline: none !important;
+}
+
+.profile-field-error {
+  color: #F7436B;
+  font-family: 'Montserrat';
+}
+
+.input-field-profile-error {
+  border-color: #F7436B !important;
+}
