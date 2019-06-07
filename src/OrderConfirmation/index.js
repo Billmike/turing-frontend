@@ -12,7 +12,8 @@ class OrderConfirmation extends Component {
     isLoading: false,
     user: {},
     orderId: '',
-    orderDetails: {}
+    orderDetails: {},
+    address: ''
   }
 
   async componentDidMount() {
@@ -21,6 +22,7 @@ class OrderConfirmation extends Component {
     const getCartID = await localStorage.getItem('cartId');
     const userDetails = await localStorage.getItem('user');
     const orderId = await localStorage.getItem('orderId');
+    const address = await localStorage.getItem('address');
     const parsedUserAddress = JSON.parse(userDetails);
     if (!orderId) {
       this.setState({ orderId: '' })
@@ -42,7 +44,7 @@ class OrderConfirmation extends Component {
             'Content-type': 'application/json'
           }
         });
-        this.setState({ productInCart: cartItem.data, total_price: totalPrice.data.total_amount, isLoading: false, orderDetails: orderDetail.data });
+        this.setState({ productInCart: cartItem.data, total_price: totalPrice.data.total_amount, isLoading: false, orderDetails: orderDetail.data, address });
       }
     } catch (error) {
       console.log('error', error);
@@ -56,6 +58,7 @@ class OrderConfirmation extends Component {
       total_price,
       isLoading,
       user,
+      address,
       orderDetails: {
         created_on,
         order_id,
@@ -91,7 +94,7 @@ class OrderConfirmation extends Component {
             </div>
             <div className="order-details-column-header">
               <p className="order-header-row">Delivery address</p>
-              <p className="order-values">{`${user.address_1} ${user.address_2}`}</p>
+              <p className="order-values">{address}</p>
             </div>
             <div className="order-details-column-header">
               <p className="order-header-row">Total Amount</p>

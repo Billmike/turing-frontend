@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Categories /> should render without crashing 1`] = `
+<Category>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#FAFAFA",
+        "borderRadius": 5,
+        "boxShadow": "0.5rem 0.5rem 3rem rgba(0,0,0,0.2)",
+        "marginLeft": 10,
+        "marginTop": 30,
+        "paddingBottom": 10,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "paddingTop": 20,
+        "position": "absolute",
+      }
+    }
+  >
+    <h4>
+      Categories
+    </h4>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      French
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Italian
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Irish
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Animal
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Flower
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Christmas
+    </p>
+    <p
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "",
+          "borderRadius": "",
+          "color": "black",
+          "cursor": "pointer",
+          "paddingBottom": "",
+          "paddingTop": "",
+          "textAlign": "center",
+        }
+      }
+    >
+      Valentine's
+    </p>
+  </div>
+</Category>
+`;

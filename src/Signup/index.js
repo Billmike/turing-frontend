@@ -28,13 +28,11 @@ export class Signup extends Component {
     const getCartID = await localStorage.getItem('cartId');
     if (!getCartID) {
       const cartID = await axios.get('https://backendapi.turing.com/shoppingcart/generateUniqueId');
-      console.log('cart', cartID.data.cart_id)
       localStorage.setItem('cartId', cartID.data.cart_id);
       this.setState({ cart_id: cartID.data.cart_id })
     } else {
       const response = await axios.get(`https://backendapi.turing.com/shoppingcart/${getCartID}`);
-      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`)
-      console.log('response', totalPrice);
+      const totalPrice = await axios.get(`https://backendapi.turing.com/shoppingcart/totalAmount/${getCartID}`);
       this.setState({ cart_id: getCartID, productIncart: response.data, total_price: totalPrice.data.total_amount })
     }
   }
@@ -78,9 +76,7 @@ export class Signup extends Component {
   componentClicked = () => console.log('Clicked it')
 
   responseFacebook = async(response) => {
-    console.log('got the response', response)
     const { history, toastManager } = this.props;
-    console.log('the response', response);
     const url = 'https://backendapi.turing.com/customers/facebook';
     const options = {
       url,

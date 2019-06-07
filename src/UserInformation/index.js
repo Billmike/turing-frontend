@@ -38,7 +38,7 @@ export class UserInformation extends Component {
       const regionsData = await axios.get('https://backendapi.turing.com/shipping/regions');
       this.setState({ userObj: retrieveUser.data, regions: regionsData.data })
     } catch (error) {
-      console.log('what is error', error.response)
+      console.error(error)
     }
     if (!getCartID) {
       this.setState({ productInCart: [] })
@@ -90,7 +90,6 @@ export class UserInformation extends Component {
 
     const accessToken = await localStorage.getItem('user');
     const parsedAccessToken = JSON.parse(accessToken);
-    console.log('parsed token', parsedAccessToken)
     const data = { address_1, address_2, city, region, postal_code, country, shipping_region_id };
     try {
       const url = 'https://backendapi.turing.com/customers/address';

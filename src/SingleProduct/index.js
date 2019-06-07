@@ -51,7 +51,7 @@ export class SingleProduct extends Component {
       const convertToInteger = Number(averageRating).toFixed(1);
       this.setState({ totalRating: convertToInteger, reviews: ratings.data })
     } catch (error) {
-      console.log('error', error)
+      console.error(error)
     }
     const getCartID = await localStorage.getItem('cartId');
     if (!getCartID) {
@@ -183,7 +183,10 @@ export class SingleProduct extends Component {
               boxShadow: '0.5rem 0.5rem 3rem rgba(0,0,0,0.2)',
               fontFamily: 'Montserrat'
             }}
-            onClick={() => this.toggleModalVisibility(false)}
+            onClick={() => {
+              this.toggleModalVisibility(false);
+              history.push('/');
+              }}
           >
             Continue Shopping
           </button>

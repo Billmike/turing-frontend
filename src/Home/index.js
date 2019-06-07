@@ -96,7 +96,7 @@ export class HomePage extends React.Component {
 
   searchProducts = async (searchTerm) => {
     const { page } = this.state;
-    this.setState({ searchTerm, hasSearched: true, })
+    this.setState({ searchTerm })
     if (searchTerm.length === 0) {
       this.setState({ isLoading: true })
       const response = await fetchProducts(page);
@@ -104,7 +104,7 @@ export class HomePage extends React.Component {
     } else if (searchTerm.length > 3) {
       this.setState({ isLoading: true })
       const foundProducts = await searchProducts(searchTerm);
-      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1, products: [] })
+      this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1, products: [], hasSearched: true })
     }
   }
 

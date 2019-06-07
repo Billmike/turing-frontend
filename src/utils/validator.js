@@ -44,9 +44,7 @@ export const validateProfile = (
   data
 ) => {
   let errors = {};
-  console.log('data', data)
   for (let key in data) {
-    console.log('key', key)
     if (data[key] === undefined || data[key].trim() === '') {
       errors[key] = `${key} is required.`
     }

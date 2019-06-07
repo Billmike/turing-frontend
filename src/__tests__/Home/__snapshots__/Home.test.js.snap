@@ -278,7 +278,7 @@ exports[`<HomePage /> renders without crashing 1`] = `
                                     "marginTop": -10,
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 10,
+                                    "zIndex": 1,
                                   }
                                 }
                               >
@@ -560,7 +560,7 @@ exports[`<HomePage /> renders without crashing 1`] = `
                                     "marginTop": -10,
                                     "textAlign": "center",
                                     "width": 20,
-                                    "zIndex": 10,
+                                    "zIndex": 1,
                                   }
                                 }
                               >

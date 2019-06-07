@@ -104,7 +104,7 @@ export class Checkout extends Component {
     const getCartID = await localStorage.getItem('cartId');
     const accessToken = await localStorage.getItem('user');
     const parsedAccessToken = JSON.parse(accessToken);
-    const { userObj: { shipping_region_id }, total_price } = this.state;
+    const { userObj: { shipping_region_id, address_1, address_2 }, total_price } = this.state;
     const { toastManager } = this.props;
     const data = { cart_id: getCartID, shipping_id: shipping_region_id, tax_id: 2 };
     try {
@@ -118,8 +118,10 @@ export class Checkout extends Component {
           'Content-type': 'application/json'
         }
       }
+      const fullAddress = address_2 ? `${address_1} ${address_2}` : `${address_1}`;
       const postOrder = await axios(options);
       await localStorage.setItem('orderId', JSON.stringify(postOrder.data.orderId));
+      await localStorage.setItem('address', fullAddress);
       this.setState({ orderId: postOrder.data.orderId });
     } catch (error) {
       toastManager.add('An error occurred.', { appearance: 'error', autoDismiss: true });

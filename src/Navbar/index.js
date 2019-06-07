@@ -92,7 +92,7 @@ class NavbarComponent extends Component {
                     </i>
                     <div style={{
                         marginTop: -10,
-                        zIndex: 10,
+                        zIndex: 1,
                         backgroundColor: '#f7436b',
                         height: 20,
                         width: 20,
@@ -144,7 +144,7 @@ class NavbarComponent extends Component {
                     </i>
                     <div style={{
                         marginTop: -10,
-                        zIndex: 10,
+                        zIndex: 1,
                         backgroundColor: '#f7436b',
                         height: 20,
                         width: 20,
