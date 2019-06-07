@@ -10,7 +10,7 @@ import Checkout from './Checkout';
 import RequireAuth from './utils/RequireAuth';
 import OrderConfirmation from './OrderConfirmation';
 import NotFoundPage from './NotFoundPage';
-import UserProfile from './UserProfile/UserProfile';
+import UserProfile from './UserProfile';
 import { toast } from 'react-toastify';
 import { ToastProvider } from 'react-toast-notifications';
 import 'bootstrap/dist/css/bootstrap.min.css';
