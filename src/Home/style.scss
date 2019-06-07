@@ -19,6 +19,16 @@
   outline: none !important;
 }
 
+.no-product-found {
+  & p, span {
+    line-height: 400px;
+  }
+
+  & span {
+    margin-right: 80px;
+  }
+}
+
 .page-numbers-style {
   padding: 5px;
   margin-left: 10px;

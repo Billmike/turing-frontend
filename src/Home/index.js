@@ -17,7 +17,7 @@ import Paginate from 'react-paginate';
 import image1 from '../assets/bags.jpg';
 import image2 from '../assets/lines.jpg';
 import image3 from '../assets/dooley.jpg';
-import './style.css';
+import './style.scss';
 
 const ITEMS = [
   {
@@ -101,7 +101,7 @@ export class HomePage extends React.Component {
       this.setState({ isLoading: true })
       const response = await fetchProducts(page);
       this.setState({ products: response.data.rows, isLoading: false, pageCount: Math.ceil(response.data.count / 12), hasSearched: false, searchedProducts: [] })
-    } else if (searchTerm.length > 3) {
+    } else {
       this.setState({ isLoading: true })
       const foundProducts = await searchProducts(searchTerm);
       this.setState({ searchedProducts: foundProducts.data.rows, isLoading: false, pageCount: foundProducts.data.count > 12 ? Math.ceil(foundProducts.data.count / 12) : 1, products: [], hasSearched: true })
