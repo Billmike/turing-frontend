@@ -5,7 +5,7 @@ import SingleProduct from './SingleProduct';
 import Signup from './Signup';
 import Login from './Login';
 import Cart from './Cart';
-import DisplayUserProfile from './DisplayUserProfile';
+import UserInformation from './UserInformation';
 import Checkout from './Checkout';
 import RequireAuth from './utils/RequireAuth';
 import OrderConfirmation from './OrderConfirmation';
@@ -29,10 +29,10 @@ function App() {
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
             <Route path="/cart" component={Cart} />
-            <Route path="/profile" component={RequireAuth(DisplayUserProfile)} />
             <Route path="/checkout" component={RequireAuth(Checkout)} />
             <Route path="/confirm" component={RequireAuth(OrderConfirmation)} />
             <Route path="/user" component={RequireAuth(UserProfile)} />
+            <Route path="/edit-profile" component={RequireAuth(UserInformation)} />
             <Route component={NotFoundPage} />
           </Switch>
         </BrowserRouter>

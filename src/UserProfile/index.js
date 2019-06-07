@@ -101,7 +101,7 @@ export class UserProfile extends Component {
               <p className="opaque-field-values">{country || 'Tell us where you are from'}</p>
             </div>
           </div>
-          <div onClick={() => history.push('/profile')} className="edit-button-style">
+          <div onClick={() => history.push('/edit-profile')} className="edit-button-style">
             <i class="far fa-edit"></i>
           </div>
         </div>
